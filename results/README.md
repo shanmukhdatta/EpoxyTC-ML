@@ -81,3 +81,7 @@ Open a CSV above → verify its notebook cell and evaluation protocol → inspec
 ## F. Reviewer physical-model evidence (new, separate)
 
 The separately audited [`physics/`](physics/README.md) subdirectory contains conditional Maxwell–Eucken / Bruggeman / Hamilton–Crosser / Lewis–Nielsen / Hashin–Shtrikman results, manuscript Figure 3 approximate digitization, experimental-reference comparisons, SVG plots and verification code. The existing 15 root-level historical CSVs are unchanged. **0 of the original 256 records are fully source-authenticated**; the new physics cases must not be represented as measurements on the exact original data. Reproduce checks with `python results/physics/verify_against_src.py`.
+
+## G. Verification-first original-data and reviewer gates
+
+See [`verification/`](verification/README.md) for a self-contained audit script, original-CSV SHA-256 digests, all-256-row source-evidence gate, high-temperature single-source limitation, room-temperature same-input/different-target collisions and next evidence required. The underlying CSVs are not included in this Git repository, and historical experiment tables have not been altered.

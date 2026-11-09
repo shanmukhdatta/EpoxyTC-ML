@@ -1,0 +1,4 @@
+regime,filename,sha256,rows,distinct_row_ids,same_recorded_feature_rows,exact_feature_and_target_duplicates
+cryogenic,CRYOGENIC_KAGGLE_READY.csv,388bec35201c269a097110bb6a7770fd283b97dd176415c50c23d3c6e972e34f,54,54,0,0
+room,ROOM_KAGGLE_READY.csv,7d0e2aff60893058f8e5ed48d853239caffc6110c7d399e5fcbd06c333a27741,160,160,6,0
+high,HIGH_KAGGLE_READY.csv,2507c792280202e7ec426ea018daac5d1e556b0ee15bf135fa1fdda5d9722a09,42,42,0,0
