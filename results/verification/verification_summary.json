@@ -23,5 +23,22 @@
   "same_feature_vector_conflicting_target_groups": 3,
   "same_feature_vector_conflicting_target_rows": 6,
   "original_rows_physics_experimentally_authenticated": 0,
+  "recorded_four_feature_deterministic_error_floor": {
+    "cryogenic": {
+      "mae_w_mk": 0.0,
+      "rmse_w_mk": 0.0,
+      "scope": "MATHEMATICAL_FULL_DATA_FIT_LOWER_BOUND_ONLY_NOT_VALIDATION"
+    },
+    "room": {
+      "mae_w_mk": 0.0081875,
+      "rmse_w_mk": 0.052847067089858445,
+      "scope": "MATHEMATICAL_FULL_DATA_FIT_LOWER_BOUND_ONLY_NOT_VALIDATION"
+    },
+    "high": {
+      "mae_w_mk": 0.0,
+      "rmse_w_mk": 0.0,
+      "scope": "MATHEMATICAL_FULL_DATA_FIT_LOWER_BOUND_ONLY_NOT_VALIDATION"
+    }
+  },
   "note": "This is a nontraining verification of recorded data, not validation of source identities, physical models or experimental observations."
 }

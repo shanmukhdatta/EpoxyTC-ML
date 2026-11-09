@@ -34,3 +34,7 @@ If the original CSVs are not present in GitHub `data/raw/`, supply them locally;
 | Identical recorded inputs/different target outputs (R1-06, R2-03) | 3 two-row collision groups; 6 observations | Recover filler morphology, processing, specimen identity and exact source before interpreting ML error |
 
 The notebook-recovered summary metrics in `results/` remain **provisional**; no rerun or full ML-result verification is claimed. The original physics comparisons and two SVG digitized plots remain at `results/physics/`.
+
+### Mathematical identifiability result
+
+Given the current four recorded input features, three room-temperature feature collisions produce a strict **full-data deterministic model-error lower bound** of **MAE ≥ 0.0081875 W/(m·K)** and **RMSE ≥ 0.0528471 W/(m·K)** over the original 160 room observations. This is not a held-out prediction score. The derivation and exact row pairs are in [`EXACT_COLLISION_FINDING.md`](EXACT_COLLISION_FINDING.md), and the code independently computes both bounds in `verification_summary.json`.

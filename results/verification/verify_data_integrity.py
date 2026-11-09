@@ -42,6 +42,7 @@ def audit(data_dir: Path, output_dir: Path) -> dict:
     reg, collisions, source_gate, integrity = [], [], [], []
     encountered_ids = set()
     encountered_sha = {}
+    deterministic_error_lower_bounds = {}
     total = 0
     for regime, (filename, expected) in FILES.items():
         path = data_dir / filename
@@ -66,8 +67,24 @@ def audit(data_dir: Path, output_dir: Path) -> dict:
             raise ValueError(f"{filename}: missing numeric material inputs/target")
         total += len(df)
 
+        # The best deterministic function of the recorded 4-vector cannot
+        # output different targets for identical vectors. For the full dataset
+        # (not a held-out test), derive a mathematical minimum error floor.
+        minimum_absolute_sum = 0.0
+        minimum_squared_sum = 0.0
+        feature_partitions = list(df.groupby(FEATURES, dropna=False, sort=False))
+        for _, part in feature_partitions:
+            obs = part[TARGET].astype(float).to_numpy()
+            minimum_absolute_sum += float(np.abs(obs - np.median(obs)).sum())
+            minimum_squared_sum += float(np.sum((obs - np.mean(obs))**2))
+        deterministic_error_lower_bounds[regime] = {
+            "mae_w_mk": minimum_absolute_sum / len(df),
+            "rmse_w_mk": float(np.sqrt(minimum_squared_sum / len(df))),
+            "scope": "MATHEMATICAL_FULL_DATA_FIT_LOWER_BOUND_ONLY_NOT_VALIDATION",
+        }
+
         # All identical numeric feature vectors share one key, including missing temperatures.
-        for _, part in df.groupby(FEATURES, dropna=False, sort=False):
+        for _, part in feature_partitions:
             if len(part) <= 1:
                 continue
             measured = part[TARGET].astype(float)
@@ -164,6 +181,7 @@ def audit(data_dir: Path, output_dir: Path) -> dict:
         "same_feature_vector_conflicting_target_groups": int(coll_df.colliding_row_ids.nunique()),
         "same_feature_vector_conflicting_target_rows": len(coll_df),
         "original_rows_physics_experimentally_authenticated": 0,
+        "recorded_four_feature_deterministic_error_floor": deterministic_error_lower_bounds,
         "note": "This is a nontraining verification of recorded data, not validation of source identities, physical models or experimental observations.",
     }
     (output_dir / "verification_summary.json").write_text(json.dumps(summary, indent=2) + "\n")

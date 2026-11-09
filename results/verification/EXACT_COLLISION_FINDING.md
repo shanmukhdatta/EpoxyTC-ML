@@ -11,3 +11,12 @@ Three collisions in the original **room-temperature** CSV have the same recorded
 **Scientific implication:** a deterministic function of the four recorded features must return one prediction for two equal input vectors. It therefore cannot fit both distinct recorded targets exactly, absent additional predictors or a corrected source mapping. Measurement uncertainty, morphology, processing, experimental direction and source errors are possible explanations but **none is established here**. Do not delete these rows or average their measurements without authenticated sample records.
 
 All values above were read directly from the original user-supplied room CSV and reproduced by `verify_data_integrity.py`. The original file hash appears in `input_file_hashes.csv`.
+
+## Mathematical full-data model-error floor
+
+For any deterministic regression function using **only the four recorded predictors** on all 160 room-temperature records, the three conflicting-feature pairs create an unavoidable fit error, even if the other 154 rows are fitted perfectly. For two different targets \(y_1,y_2\) at identical input \(x\), the minimum combined absolute error is \(|y_1-y_2|\), and the minimum combined squared error is \((y_1-y_2)^2/2\). Therefore:
+
+- **Minimum full-room-data MAE:** `(0.47 + 0.82 + 0.02)/160 = 0.0081875 W/(m K)`.
+- **Minimum full-room-data RMSE:** `sqrt((0.47² + 0.82² + 0.02²)/(2×160)) = 0.0528471 W/(m K)`.
+
+These are **conditional mathematical lower bounds for fitting the full recorded dataset**, not reviewer-grade holdout scores, predictive performance claims, or physical experimental uncertainty. Adding authentic material/morphology predictors or correcting erroneous provenance could change the input equivalence classes and hence these bounds.
