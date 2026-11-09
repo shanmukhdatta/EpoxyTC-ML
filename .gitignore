@@ -15,8 +15,6 @@ dist/
 *.joblib
 data/processed/*
 !data/processed/.gitkeep
-results/*
-!results/.gitkeep
-figures/*
-!figures/.gitkeep
+# Curated results and SVG figures are intentionally tracked.
+# Large raw model artifacts are reviewed separately before Git publication.
 .env

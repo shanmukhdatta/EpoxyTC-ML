@@ -1,0 +1,7 @@
+regime,model,MAE_mean,MAE_sd,RMSE_mean,R2_mean
+cryogenic,GradientBoosting,0.0707,0.0159,0.1057,0.8212
+cryogenic,ExtraTrees,0.0931,0.0295,0.1196,0.7595
+cryogenic,XGBoost,0.0966,0.0181,0.1156,0.7894
+room,ExtraTrees,0.218,0.0195,0.325,0.5745
+room,XGBoost,0.2374,0.0042,0.3384,0.5429
+room,GradientBoosting,0.2409,0.0155,0.3505,0.5106

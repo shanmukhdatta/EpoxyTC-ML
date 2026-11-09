@@ -1,0 +1,4 @@
+regime,n_original_rows,assigned_doi_rows,nonempty_row_evidence_text_rows,nonempty_filler_loading_unit_rows,independently_verified_rows,physical_predictions_permitted,status
+cryogenic,54,54,0,0,0,False,BLOCKED_UNVERIFIED_SOURCE_UNIT_MORPHOLOGY
+room,160,160,0,0,0,False,BLOCKED_UNVERIFIED_SOURCE_UNIT_MORPHOLOGY
+high,42,42,0,0,0,False,BLOCKED_UNVERIFIED_SOURCE_UNIT_MORPHOLOGY

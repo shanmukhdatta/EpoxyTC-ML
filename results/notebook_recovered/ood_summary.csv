@@ -1,0 +1,5 @@
+regime,model,n_oof,n_outside_any_training_feature_range,out_of_range_fraction,n_centroid_distance_gt_train_p95,n_exact_numeric_feature_matches,MAE_overall,MAE_outside_range,MAE_inside_range,delta_MAE_outside_minus_inside,spearman_centroid_distance_vs_abs_error
+cryogenic,ExtraTrees,43,2,0.0465,3,0,0.0893,0.1772,0.085,0.0921,0.7129
+cryogenic,GradientBoosting,43,2,0.0465,3,0,0.0857,0.1648,0.0819,0.0829,0.6391
+room,ExtraTrees,128,1,0.0078,10,0,0.2557,0.1201,0.2568,-0.1367,-0.3084
+room,GradientBoosting,128,1,0.0078,10,0,0.2538,0.1183,0.2548,-0.1365,-0.3718

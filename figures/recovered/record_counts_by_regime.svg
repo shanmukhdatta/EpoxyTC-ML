@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DEEPOXY — Recorded dataset sizes" width="1030" height="353" viewBox="0 0 1030 353">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="45" font-size="25" font-weight="700" font-family="Arial,sans-serif" fill="#1c2535">DEEPOXY — Recorded dataset sizes</text>
+<text x="48" y="72" font-size="15" font-family="Arial,sans-serif" fill="#596576">Original observations before augmentation: 54 + 160 + 42 = 256</text>
+<line x1="274" y1="106" x2="274" y2="228" stroke="#e1e5ea" stroke-width="1"/>
+<text x="274" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0</text>
+<line x1="402.20000000000005" y1="106" x2="402.20000000000005" y2="228" stroke="#e1e5ea" stroke-width="1"/>
+<text x="402.20000000000005" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">35.2</text>
+<line x1="530.4000000000001" y1="106" x2="530.4000000000001" y2="228" stroke="#e1e5ea" stroke-width="1"/>
+<text x="530.4000000000001" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">70.4</text>
+<line x1="658.5999999999999" y1="106" x2="658.5999999999999" y2="228" stroke="#e1e5ea" stroke-width="1"/>
+<text x="658.5999999999999" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">105.6</text>
+<line x1="786.8000000000001" y1="106" x2="786.8000000000001" y2="228" stroke="#e1e5ea" stroke-width="1"/>
+<text x="786.8000000000001" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">140.8</text>
+<line x1="915" y1="106" x2="915" y2="228" stroke="#e1e5ea" stroke-width="1"/>
+<text x="915" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">176</text>
+<text x="48" y="139" font-family="Arial,sans-serif" font-size="14" fill="#263348">cryogenic</text>
+<rect x="274.00" y="121" width="196.67" height="24" rx="4" fill="#4978bf"/>
+<text x="480.67" y="139" font-family="Arial,sans-serif" font-size="13" fill="#283849">54</text>
+<text x="48" y="178" font-family="Arial,sans-serif" font-size="14" fill="#263348">room</text>
+<rect x="274.00" y="160" width="582.73" height="24" rx="4" fill="#4978bf"/>
+<text x="866.73" y="178" font-family="Arial,sans-serif" font-size="13" fill="#283849">160</text>
+<text x="48" y="217" font-family="Arial,sans-serif" font-size="14" fill="#263348">high</text>
+<rect x="274.00" y="199" width="152.97" height="24" rx="4" fill="#4978bf"/>
+<text x="436.97" y="217" font-family="Arial,sans-serif" font-size="13" fill="#283849">42</text>
+<text x="515" y="283" text-anchor="middle" font-size="14" fill="#38485a" font-family="Arial,sans-serif">Number of recorded original observations</text>
+<text x="48" y="310" font-size="13" fill="#48566b" font-family="Arial,sans-serif">Manuscript count of 259 remains unresolved; these are notebook-reported historical counts.</text>
+<text x="48" y="331" font-size="12" fill="#677588" font-family="Arial,sans-serif">Source: epoxty-checking.ipynb saved output; figure regenerated from recovered CSV, not a model rerun.</text>
+</svg>

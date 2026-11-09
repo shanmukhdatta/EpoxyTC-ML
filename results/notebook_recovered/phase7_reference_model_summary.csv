@@ -1,0 +1,5 @@
+regime,model,mean_fold_MAE,SD_fold_MAE,mean_fold_RMSE,mean_fold_R2
+cryogenic,ExtraTrees,0.0887,0.0225,0.1103,0.8034
+cryogenic,GradientBoosting,0.0853,0.0223,0.1163,0.7839
+room,ExtraTrees,0.2557,0.0158,0.3511,0.5083
+room,GradientBoosting,0.2538,0.0109,0.3537,0.5006

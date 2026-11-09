@@ -1,0 +1,43 @@
+{
+  "source_table": "results/notebook_recovered/nine_model_cv_summary.csv",
+  "evidence_status": "HISTORICAL_PROVISIONAL_RECORDED_SUMMARY",
+  "top_descriptive_mean_fold_MAE_by_regime": {
+    "cryogenic": {
+      "model": "TabICLv2",
+      "mean_fold_MAE": 0.06264,
+      "n_folds": 4
+    },
+    "room": {
+      "model": "TabICLv2",
+      "mean_fold_MAE": 0.18339,
+      "n_folds": 4
+    }
+  },
+  "high_temperature_exploratory": [
+    {
+      "model": "Google_TabFM",
+      "MAE": 0.06444,
+      "RMSE": 0.12755,
+      "R2": 0.87311,
+      "publication_count": 1
+    },
+    {
+      "model": "TabICLv2",
+      "MAE": 0.03327,
+      "RMSE": 0.06047,
+      "R2": 0.97148,
+      "publication_count": 1
+    },
+    {
+      "model": "TrainMeanBaseline",
+      "MAE": 0.29808,
+      "RMSE": 0.36332,
+      "R2": -0.02959,
+      "publication_count": 1
+    }
+  ],
+  "interpretation": "Lowest historical mean fold MAE is descriptive, not established superiority or independently validated generalization",
+  "significance_comment": "Four provisional development source groups per regime; Holm-adjusted p=0.5 in four recorded paired comparisons",
+  "all_values_from_stored_csv": true,
+  "no_model_retraining_for_summary": true
+}

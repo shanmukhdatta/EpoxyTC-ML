@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DEEPOXY — Cryogenic out-of-range errors" width="1030" height="314" viewBox="0 0 1030 314">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="45" font-size="25" font-weight="700" font-family="Arial,sans-serif" fill="#1c2535">DEEPOXY — Cryogenic out-of-range errors</text>
+<text x="48" y="72" font-size="15" font-family="Arial,sans-serif" fill="#596576">Two outside-range observations among 43 development OOF rows</text>
+<line x1="274" y1="106" x2="274" y2="189" stroke="#e1e5ea" stroke-width="1"/>
+<text x="274" y="214" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0</text>
+<line x1="402.20000000000005" y1="106" x2="402.20000000000005" y2="189" stroke="#e1e5ea" stroke-width="1"/>
+<text x="402.20000000000005" y="214" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0.03898</text>
+<line x1="530.4000000000001" y1="106" x2="530.4000000000001" y2="189" stroke="#e1e5ea" stroke-width="1"/>
+<text x="530.4000000000001" y="214" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0.07797</text>
+<line x1="658.6000000000001" y1="106" x2="658.6000000000001" y2="189" stroke="#e1e5ea" stroke-width="1"/>
+<text x="658.6000000000001" y="214" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0.11695</text>
+<line x1="786.8000000000001" y1="106" x2="786.8000000000001" y2="189" stroke="#e1e5ea" stroke-width="1"/>
+<text x="786.8000000000001" y="214" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0.15594</text>
+<line x1="915" y1="106" x2="915" y2="189" stroke="#e1e5ea" stroke-width="1"/>
+<text x="915" y="214" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0.19492</text>
+<text x="48" y="139" font-family="Arial,sans-serif" font-size="14" fill="#263348">ExtraTrees: outside range</text>
+<rect x="274.00" y="121" width="582.73" height="24" rx="4" fill="#4978bf"/>
+<text x="866.73" y="139" font-family="Arial,sans-serif" font-size="13" fill="#283849">0.1772</text>
+<text x="48" y="178" font-family="Arial,sans-serif" font-size="14" fill="#263348">GradientBoosting: outside range</text>
+<rect x="274.00" y="160" width="541.95" height="24" rx="4" fill="#4978bf"/>
+<text x="825.95" y="178" font-family="Arial,sans-serif" font-size="13" fill="#283849">0.1648</text>
+<text x="515" y="244" text-anchor="middle" font-size="14" fill="#38485a" font-family="Arial,sans-serif">MAE outside training feature range [W/(m·K)]</text>
+<text x="48" y="271" font-size="13" fill="#48566b" font-family="Arial,sans-serif">Only two outside-range points; comparison descriptive, not a reliable OOD performance guarantee.</text>
+<text x="48" y="292" font-size="12" fill="#677588" font-family="Arial,sans-serif">Source: epoxty-checking.ipynb saved output; figure regenerated from recovered CSV, not a model rerun.</text>
+</svg>

@@ -1,0 +1,5 @@
+regime,candidate,comparator,mean_delta_MAE,candidate_better_folds,exact_signflip_p_exploratory,n_provisional_groups,holm_adjusted_p_exploratory,claim_of_significant_superiority
+cryogenic,TabICLv2,GradientBoosting,-0.014428,3,0.375,4,0.5,False
+cryogenic,TabICLv2,Google_TabFM,-0.025486,4,0.125,4,0.5,False
+room,TabICLv2,ExtraTrees,-0.031127,4,0.125,4,0.5,False
+room,TabICLv2,Google_TabFM,-0.059281,4,0.125,4,0.5,False

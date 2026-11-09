@@ -1,0 +1,15 @@
+regime,model,feature,mean_MAE_increase,SD_across_groups,positive_groups,top_rank_groups,mean_importance_rank
+cryogenic,ExtraTrees,base_tc_w_mk,0.10296,0.03286,4,3,1.0
+cryogenic,ExtraTrees,filler_loading_as_recorded,0.08847,0.02767,4,1,2.0
+cryogenic,ExtraTrees,temperature_k_recorded,0.00871,0.0083,4,0,3.0
+cryogenic,ExtraTrees,filler_tc_w_mk,0.00254,0.00372,3,0,4.0
+cryogenic,GradientBoosting,base_tc_w_mk,0.12573,0.04514,4,3,1.0
+cryogenic,GradientBoosting,filler_loading_as_recorded,0.0928,0.02365,4,1,2.0
+cryogenic,GradientBoosting,filler_tc_w_mk,0.01182,0.00893,4,0,3.0
+cryogenic,GradientBoosting,temperature_k_recorded,0.00144,0.00752,1,0,4.0
+room,ExtraTrees,base_tc_w_mk,0.11955,0.01178,4,3,1.0
+room,ExtraTrees,filler_tc_w_mk,0.11103,0.02891,4,1,2.0
+room,ExtraTrees,filler_loading_as_recorded,0.028,0.00881,4,0,3.0
+room,GradientBoosting,base_tc_w_mk,0.13569,0.02973,4,2,1.0
+room,GradientBoosting,filler_tc_w_mk,0.12841,0.03709,4,2,2.0
+room,GradientBoosting,filler_loading_as_recorded,0.02428,0.00871,4,0,3.0

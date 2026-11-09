@@ -1,0 +1,11 @@
+regime,model,folds,MAE_mean,MAE_sd,RMSE_mean,RMSE_sd,R2_mean
+cryogenic,GradientBoosting,4,0.0771,0.0195,0.113,0.027,0.8002
+cryogenic,XGBoost,4,0.0774,0.0201,0.1033,0.0246,0.8287
+cryogenic,RandomForest,4,0.0927,0.0281,0.1243,0.0395,0.7493
+cryogenic,ExtraTrees,4,0.0949,0.0273,0.1236,0.0386,0.7488
+cryogenic,SVR,4,0.1041,0.0226,0.1379,0.0319,0.6947
+room,ExtraTrees,4,0.2145,0.0065,0.3217,0.026,0.585
+room,XGBoost,4,0.243,0.0248,0.3549,0.0446,0.4961
+room,GradientBoosting,4,0.2443,0.0212,0.3536,0.0506,0.5006
+room,RandomForest,4,0.2466,0.0271,0.3498,0.0474,0.5115
+room,SVR,4,0.389,0.0465,0.5215,0.0727,-0.0862

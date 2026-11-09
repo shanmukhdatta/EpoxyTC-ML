@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DEEPOXY — High-temperature exploratory results" width="1030" height="353" viewBox="0 0 1030 353">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="45" font-size="25" font-weight="700" font-family="Arial,sans-serif" fill="#1c2535">DEEPOXY — High-temperature exploratory results</text>
+<text x="48" y="72" font-size="15" font-family="Arial,sans-serif" fill="#596576">42 observations; one recorded publication; composition-grouped validation only</text>
+<line x1="274" y1="106" x2="274" y2="228" stroke="#e1e5ea" stroke-width="1"/>
+<text x="274" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0</text>
+<line x1="402.2" y1="106" x2="402.2" y2="228" stroke="#e1e5ea" stroke-width="1"/>
+<text x="402.2" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0.06558</text>
+<line x1="530.4" y1="106" x2="530.4" y2="228" stroke="#e1e5ea" stroke-width="1"/>
+<text x="530.4" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0.13116</text>
+<line x1="658.5999999999999" y1="106" x2="658.5999999999999" y2="228" stroke="#e1e5ea" stroke-width="1"/>
+<text x="658.5999999999999" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0.19673</text>
+<line x1="786.8" y1="106" x2="786.8" y2="228" stroke="#e1e5ea" stroke-width="1"/>
+<text x="786.8" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0.26231</text>
+<line x1="915" y1="106" x2="915" y2="228" stroke="#e1e5ea" stroke-width="1"/>
+<text x="915" y="253" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#57636f">0.32789</text>
+<text x="48" y="139" font-family="Arial,sans-serif" font-size="14" fill="#263348">TabFM</text>
+<rect x="274.00" y="121" width="125.98" height="24" rx="4" fill="#4978bf"/>
+<text x="409.98" y="139" font-family="Arial,sans-serif" font-size="13" fill="#283849">0.06444</text>
+<text x="48" y="178" font-family="Arial,sans-serif" font-size="14" fill="#263348">TabICLv2</text>
+<rect x="274.00" y="160" width="65.04" height="24" rx="4" fill="#0f766e"/>
+<text x="349.04" y="178" font-family="Arial,sans-serif" font-size="13" fill="#283849">0.03327</text>
+<text x="48" y="217" font-family="Arial,sans-serif" font-size="14" fill="#263348">TrainMeanBaseline</text>
+<rect x="274.00" y="199" width="582.73" height="24" rx="4" fill="#4978bf"/>
+<text x="866.73" y="217" font-family="Arial,sans-serif" font-size="13" fill="#283849">0.29808</text>
+<text x="515" y="283" text-anchor="middle" font-size="14" fill="#38485a" font-family="Arial,sans-serif">MAE [W/(m·K)]</text>
+<text x="48" y="310" font-size="13" fill="#48566b" font-family="Arial,sans-serif">Not independent-publication validation; do not infer generalization to other materials.</text>
+<text x="48" y="331" font-size="12" fill="#677588" font-family="Arial,sans-serif">Source: epoxty-checking.ipynb saved output; figure regenerated from recovered CSV, not a model rerun.</text>
+</svg>
