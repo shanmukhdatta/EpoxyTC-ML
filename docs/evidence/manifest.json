@@ -24,7 +24,7 @@
   "unreconciled_rows_difference": 3,
   "result_tables": [
     {
-      "path": "results/notebook_recovered/augmentation_ablation_summary.csv",
+      "path": "results/augmentation_ablation_summary.csv",
       "git_blob_sha1": "c57be7d4557c3b11d86f7548d84a82317ed2a2e6",
       "bytes": 5035,
       "source_notebook_cells_one_based": [
@@ -35,7 +35,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/external_uncertainty_availability.csv",
+      "path": "results/external_uncertainty_availability.csv",
       "git_blob_sha1": "dc274bf4d25568cea610dc857a205ed56aba1cc8",
       "bytes": 570,
       "source_notebook_cells_one_based": [
@@ -46,7 +46,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/feature_importance_summary.csv",
+      "path": "results/feature_importance_summary.csv",
       "git_blob_sha1": "9a1e26d9ac5703c4a8de301da6899e969f791bdc",
       "bytes": 1013,
       "source_notebook_cells_one_based": [
@@ -56,7 +56,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/high_temperature_exploratory_models.csv",
+      "path": "results/high_temperature_exploratory_models.csv",
       "git_blob_sha1": "d19eb445003063f58319a8fd870ec0e0cd556456",
       "bytes": 503,
       "source_notebook_cells_one_based": [
@@ -67,7 +67,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/nine_model_cv_summary.csv",
+      "path": "results/nine_model_cv_summary.csv",
       "git_blob_sha1": "0ea51d8290f3a14d7d46512a222f60c61352dde7",
       "bytes": 978,
       "source_notebook_cells_one_based": [
@@ -78,7 +78,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/nine_model_oof_bias_summary.csv",
+      "path": "results/nine_model_oof_bias_summary.csv",
       "git_blob_sha1": "040dc7b4f2f92f273488ef2971ca780a0c3a0301",
       "bytes": 1904,
       "source_notebook_cells_one_based": [
@@ -88,7 +88,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/nine_model_paired_comparisons.csv",
+      "path": "results/nine_model_paired_comparisons.csv",
       "git_blob_sha1": "0b4edbf2c3a7ab2bdff07ce83cef19c48736686b",
       "bytes": 417,
       "source_notebook_cells_one_based": [
@@ -99,7 +99,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/ood_summary.csv",
+      "path": "results/ood_summary.csv",
       "git_blob_sha1": "9eb4fb93e36ae4749e35abb513cd5e4c658e8d41",
       "bytes": 558,
       "source_notebook_cells_one_based": [
@@ -110,7 +110,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/optuna_model_summary.csv",
+      "path": "results/optuna_model_summary.csv",
       "git_blob_sha1": "ae1e99201654eb48d8e4a18ed8189e0b34a15e48",
       "bytes": 330,
       "source_notebook_cells_one_based": [
@@ -120,7 +120,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/original_five_model_cv_summary.csv",
+      "path": "results/original_five_model_cv_summary.csv",
       "git_blob_sha1": "4c964635e30d427d1c75333ea6842e3c2b25e028",
       "bytes": 607,
       "source_notebook_cells_one_based": [
@@ -131,7 +131,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/phase7_reference_model_summary.csv",
+      "path": "results/phase7_reference_model_summary.csv",
       "git_blob_sha1": "c524cb4c342e5fda985280be061068ed533bcf79",
       "bytes": 265,
       "source_notebook_cells_one_based": [
@@ -141,7 +141,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/reviewer_status_counts.csv",
+      "path": "results/reviewer_status_counts.csv",
       "git_blob_sha1": "68c06fa8cf5659c4565c0a8ccdce1d82d9a8bdfd",
       "bytes": 134,
       "source_notebook_cells_one_based": [
@@ -151,7 +151,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/seven_model_cv_summary.csv",
+      "path": "results/seven_model_cv_summary.csv",
       "git_blob_sha1": "d538abdee9c940e0e770ddddc06f8ec4ba3e6dad",
       "bytes": 950,
       "source_notebook_cells_one_based": [
@@ -161,7 +161,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/seven_model_pairwise_tests.csv",
+      "path": "results/seven_model_pairwise_tests.csv",
       "git_blob_sha1": "375ddd42b225d99cecdf33e2e912c560509f5ced",
       "bytes": 1185,
       "source_notebook_cells_one_based": [
@@ -171,7 +171,7 @@
       "scientific_verification": "PROVISIONAL"
     },
     {
-      "path": "results/notebook_recovered/source_verification_status.csv",
+      "path": "results/source_verification_status.csv",
       "git_blob_sha1": "162883d306cf9c530147c8730d1f5d0be9c865ca",
       "bytes": 375,
       "source_notebook_cells_one_based": [
@@ -255,5 +255,6 @@
     "No paired comparison established adjusted p less than 0.05",
     "Physics equation testing does not authenticate row-level physics-versus-ML comparisons",
     "The original notebook recorded two early TabFM import errors before later successful experiments"
-  ]
+  ],
+  "file_organization_note": "Recovered tables are shown directly in results/; evidence metadata was moved to docs/evidence/ without changing source data."
 }

@@ -1,5 +1,5 @@
 {
-  "source_table": "results/notebook_recovered/nine_model_cv_summary.csv",
+  "source_table": "results/nine_model_cv_summary.csv",
   "evidence_status": "HISTORICAL_PROVISIONAL_RECORDED_SUMMARY",
   "top_descriptive_mean_fold_MAE_by_regime": {
     "cryogenic": {

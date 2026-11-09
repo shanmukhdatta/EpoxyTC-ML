@@ -1,56 +1,79 @@
-# DEEPOXY — Recovered historical notebook results
+# DEEPOXY — Executed notebook results
 
-**Status: HISTORICAL NOTEBOOK OUTPUTS / PROVISIONAL RESEARCH EVIDENCE.**
-These files are recovered from saved displays of the manually executed `epoxty-checking.ipynb` (SHA-256 recorded in `manifest.json`). The original Kaggle results ZIP and full row-level experiment files were **not** available. Do not describe these outputs as externally validated or numerically reproduced.
+This directory contains **15 CSV tables recovered from outputs already displayed by the executed `epoxty-checking.ipynb`**. They are here directly so you can open each result while analysing the experiments and later revising the paper.
 
-## What you can inspect now
+**Important status:** Recovered historical results, **not** independently reproduced or laboratory-validated results. No model was retrained to create these files. Most CSVs are **summary tables**, not the complete original Kaggle exports. The values and Git blob identities of all 15 recovered CSVs were preserved when organizing this directory.
 
-| Workstream | Result file | Notebook cells (1-based) | Key evidence |
+Original notebook: `epoxty-checking.ipynb`. Original notebook SHA-256 (recorded during recovery):
+`ef371668103b26c19e9adfc5a1f59cf271dd7f5b66ba613d83faa63d9b185489`.
+
+## A. Already executed — numerical tables recovered
+
+| Experiment / analysis | CSV file | Saved notebook cell numbers (1-based) | What is available now |
 |---|---|---|---|
-| Original five-model baseline | [original_five_model_cv_summary.csv](notebook_recovered/original_five_model_cv_summary.csv) | 49, 51 | 5 models × 2 regimes, 4 folds |
-| Expanded seven-model benchmark | [seven_model_cv_summary.csv](notebook_recovered/seven_model_cv_summary.csv) | 51 | Includes GPR and MLP |
-| Nine-model benchmark | [nine_model_cv_summary.csv](notebook_recovered/nine_model_cv_summary.csv) | 69, 96 | TabICLv2 lowest displayed mean MAE in cryogenic and room |
-| Prediction bias/residual summaries | [nine_model_oof_bias_summary.csv](notebook_recovered/nine_model_oof_bias_summary.csv) | 76 | Pooled OOF summaries, **not** the individual prediction rows |
-| Exact paired tests | [nine_model_paired_comparisons.csv](notebook_recovered/nine_model_paired_comparisons.csv) | 69, 97 | Holm-adjusted p=0.5 for 4 comparisons |
-| Seven-model paired tests | [seven_model_pairwise_tests.csv](notebook_recovered/seven_model_pairwise_tests.csv) | 51 | Multiple tests, limited source groups |
-| Optuna tuning | [optuna_model_summary.csv](notebook_recovered/optuna_model_summary.csv) | 54 | Summary metrics, raw trials not recovered |
-| Train-only augmentation sensitivity | [augmentation_ablation_summary.csv](notebook_recovered/augmentation_ablation_summary.csv) | 72, 98 | 60 summarized combinations; mixed performance |
-| High-temperature exploratory | [high_temperature_exploratory_models.csv](notebook_recovered/high_temperature_exploratory_models.csv) | 94–95 | 42 rows, one source; **not external validation** |
-| Held-out permutation importance | [feature_importance_summary.csv](notebook_recovered/feature_importance_summary.csv) | 82 | Association only; **not SHAP or causal proof** |
-| OOD diagnostics | [ood_summary.csv](notebook_recovered/ood_summary.csv) | 86, 93 | Small number of out-of-range observations |
-| Source evidence status | [source_verification_status.csv](notebook_recovered/source_verification_status.csv) | 100 | 0 independently authenticated observations |
-| Recorded interval artifacts | [external_uncertainty_availability.csv](notebook_recovered/external_uncertainty_availability.csv) | 77, 99 | **Presence/counts only; displayed status text is truncated; not full files** |
-| Phase 7 reference models | [phase7_reference_model_summary.csv](notebook_recovered/phase7_reference_model_summary.csv) | 82 | Separate later reference experiment |
-| Reviewer status ledger | [reviewer_status_counts.csv](notebook_recovered/reviewer_status_counts.csv) | 103 | Notebook's provisional classification |
+| Classical five-model benchmark | [original_five_model_cv_summary.csv](original_five_model_cv_summary.csv) | 49, 51 | Mean/SD regression metrics for five models in cryogenic and room regimes |
+| Expanded seven-model benchmark | [seven_model_cv_summary.csv](seven_model_cv_summary.csv) | 51 | Includes GPR and MLP alongside classical algorithms |
+| Nine-model benchmark (includes TabFM/TabICLv2) | [nine_model_cv_summary.csv](nine_model_cv_summary.csv) | 69, 96 | Fold-mean MAE, RMSE, R², SD for 9 models × 2 regimes |
+| Nine-model pooled OOF and bias summary | [nine_model_oof_bias_summary.csv](nine_model_oof_bias_summary.csv) | 76 | Pooled accuracy and residual summaries, **not per-observation prediction rows** |
+| TabICLv2 paired comparisons | [nine_model_paired_comparisons.csv](nine_model_paired_comparisons.csv) | 69, 97 | Four paired comparisons; adjusted p-values |
+| Seven-model paired statistical tests | [seven_model_pairwise_tests.csv](seven_model_pairwise_tests.csv) | 51 | Matched four-group statistical comparisons |
+| Optuna hyperparameter tuning | [optuna_model_summary.csv](optuna_model_summary.csv) | 54 | Tuning performance summaries, **not individual Optuna trial records** |
+| Augmentation comparison | [augmentation_ablation_summary.csv](augmentation_ablation_summary.csv) | 72, 98 | 60 model/regime/variant summaries, including no-augmentation controls |
+| High-temperature exploratory models | [high_temperature_exploratory_models.csv](high_temperature_exploratory_models.csv) | 94–95 | Within-one-publication performance for 42 observations |
+| Permutation feature importance | [feature_importance_summary.csv](feature_importance_summary.csv) | 82 | Held-out permutation-based importance, **not SHAP** |
+| Out-of-distribution analysis | [ood_summary.csv](ood_summary.csv) | 86, 93 | Error comparisons for observations outside training feature ranges |
+| Later reference-model comparison | [phase7_reference_model_summary.csv](phase7_reference_model_summary.csv) | 82 | Separate later reference experiment; **not identical to nine-model benchmark** |
 
-Every table's blob SHA and provenance are listed in [manifest.json](manifest.json). The 15 CSV files are byte-for-byte preserved from the previously recovered notebook-display archive; **not** claimed to be the original Kaggle-directory CSV files.
+### Other CSVs recorded by the notebook (bookkeeping, not new model runs)
 
-## Reviewer-by-reviewer evidence
+| File | Saved notebook cell(s) | Purpose |
+|---|---|---|
+| [source_verification_status.csv](source_verification_status.csv) | 100 | Reports 54/160/42 original rows and source-authentication gaps |
+| [external_uncertainty_availability.csv](external_uncertainty_availability.csv) | 77, 99 | Reports which uncertainty/calibration exports existed in Kaggle; it **does not contain those full exports** and one status string is truncated |
+| [reviewer_status_counts.csv](reviewer_status_counts.csv) | 103 | The executed notebook's provisional counts for the 40 reviewer comments |
 
-[reviewer_evidence_index.csv](reviewer_evidence_index.csv) maps all 40 reviewer questions to notebook cells, the recovered tables, and the still-missing evidence. The statuses in that detailed index use a more granular scheme (5 computed, 14 partial, 5 source-blocked, 11 lab-blocked, 5 writing-pending) than the notebook's own 14/10/11/5 ledger. Neither represents reviewer acceptance.
+## B. What numerical results have we obtained so far?
 
-## Regenerated figures
+- **Original data:** cryogenic **54**, room **160**, high **42** = **256 recorded rows**. Their original CSV contents have not been uploaded to this GitHub repository.
+- **Four-fold nine-model development benchmarks:** lowest displayed mean MAE is **TabICLv2 = 0.06264 W/(m·K)** for cryogenic and **0.18339 W/(m·K)** for room temperature. These results use **provisional source grouping**.
+- **High temperature:** TabICLv2 exploratory MAE = **0.03327 W/(m·K)** and TabFM exploratory MAE = **0.06444 W/(m·K)**, from **one publication**.
+- **Augmentation:** the notebook recorded comparisons for six variants, five classical models and two development regimes. Effects are mixed: improvements are not universal, and duplicate controls can also help.
+- **Paired statistical comparisons:** the four selected nine-model paired comparisons have **Holm-adjusted p = 0.5**; no significant superiority at 0.05 was established by those comparisons.
+- **Physics:** 15 equation-level checks were recorded in the notebook, but no authenticated real-row physics-vs-ML comparison CSV has been recovered.
 
-See [figures/recovered](../figures/recovered) for 7 *new SVG charts derived from recovered summary CSVs*:
+These are notebook-reported historical figures, **not final manuscript claims**.
 
-- Cryogenic nine-model MAE
-- Room-temperature nine-model MAE
-- High-temperature exploratory MAE
-- Selected augmentation ΔMAE
-- Cryogenic held-out permutation importance
-- Cryogenic out-of-range MAE
-- Original observation counts
+## C. What is not completed, or still needs verification?
 
-They are **not** claimed to be the original PNG figures extracted from the notebook. The executed notebook embeds 145 original PNG outputs; those bytes are retained in the local recovered archive, but are not in this Git commit.
+| Workstream | Current status | Remaining work |
+|---|---|---|
+| Full historical row-level OOF predictions | **NOT RECOVERED HERE** | Recover if embedded or stored elsewhere; otherwise reproduce only missing outputs |
+| Complete calibration/interval prediction rows | **NOT RECOVERED HERE** | Availability/counts appear in notebook, but original complete CSV bytes are absent |
+| Complete original 145 notebook PNG plots | **NOT COMMITTED HERE** | The notebook embeds them; seven summary plots were separately regenerated as SVGs |
+| Original input datasets | **NOT UPLOADED** | Add the three real CSVs later and verify hashes, units, source identities and row counts |
+| Train-only augmentation lineage | **PARTIAL VERIFICATION** | Check parent rows, fold separation and exact augmentation settings |
+| Frozen source/material split artifacts | **PARTIAL VERIFICATION** | Verify actual group identities and reproduce exact split memberships |
+| Original literature provenance | **NOT AUTHENTICATED** | Check experimental material, source type, constituent properties and filler-loading units |
+| Physical-model vs measured-data comparison | **BLOCKED BY INPUT VERIFICATION** | Need physically eligible observations and verified properties/volume fractions |
+| High-temperature external generalization | **NOT ESTABLISHED** | Existing 42-row experiment is within a single publication |
+| Original 259-vs-256 count discrepancy | **UNRESOLVED** | Locate historical dataset versions or source records |
+| Complete 40-reviewer scientific resolution | **NOT CLAIMED** | Review computational evidence separately from missing source/laboratory evidence |
+| Additional outputs from the corrected *extended* notebook | **NOT VERIFIED BY THIS ARCHIVE** | Do not claim those later cells were executed simply because code exists |
 
-## Scientific limits and what remains
+## D. Plots and evidence tracking
 
-- The original 54 + 160 + 42 = 256 rows conflict with the manuscript's 259; discrepancy unresolved.
-- Full original Kaggle 176-file ZIP, original prediction-level CSVs and pickle snapshots are not included.
-- Dataset publication IDs and source measurements are not independently authenticated.
-- The high-temperature experiment involves one publication, so no cross-publication result is proven.
-- Real-row effective-medium physical comparisons remain blocked by missing verified units/properties.
-- Lab uncertainty and independent real measurement–prediction comparisons were not recovered.
-- Later extended notebook appendix computations are not implied to have executed in this original notebook.
+The following are **seven new SVG visualizations of the recovered CSV data**, not a replacement for the executed notebook's original PNG figures:
 
-**Workflow for manuscript revision:** identify reviewer ID in `reviewer_evidence_index.csv` → open its CSV and figure → inspect exact cell in original executed notebook → check provenance and limitations → only then cite a result or decide to rerun the missing computation.
+[All seven regenerated result figures](../figures/recovered)
+
+Detailed provenance and reviewer status files are stored **outside the results directory**:
+
+- [Recovery manifest — hashes and limits](../docs/evidence/manifest.json)
+- [Derived numerical snapshot](../docs/evidence/metrics_snapshot.json)
+- [Reviewer-by-reviewer evidence index (40 questions)](../docs/evidence/reviewer_evidence_index.csv)
+
+## E. How to use these for the manuscript later
+
+Open a CSV above → verify its notebook cell and evaluation protocol → inspect the matching figure if relevant → check the reviewer evidence index → distinguish **recorded numerical evidence** from a claim that requires further computation or authenticated inputs. If full prediction rows are unavailable, never invent them from summary metrics.
+
+**Directory rule:** `results/` contains the 15 recovered historical CSV tables and this README. Manuscript/reviewer indexes, provenance JSON, and derived metadata are kept under `docs/evidence/`.
