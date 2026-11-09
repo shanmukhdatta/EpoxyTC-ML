@@ -1,0 +1,35 @@
+{
+  "title": "DEEPOXY physics reviewer verification-first export",
+  "scope": "source reconstructed comparisons, approximate laboratory graph readings, published manuscript comparison errors",
+  "source_experiment_cases": 11,
+  "original_256_fully_authenticated": 0,
+  "source_ref23_direct_measured_cases": 2,
+  "approx_digitized_lab_points": 30,
+  "lab_forward_scenarios": 15,
+  "reviewer_physics_items_indexed": 17,
+  "equations": "Existing src/physics.py; no duplicate implementation required",
+  "assumption": "Experimental cases include proxy k_f and assumed geometry; candidate ROO IDs are not verified original rows",
+  "laboratory_missing": "Raw heat-flow/gradient/geometry/calibration logs needed for numeric GUM uncertainties",
+  "digitization": "±0.04 W/(m K) is plot-reading tolerance only",
+  "ref23": {
+    "temperature_k": [
+      80,
+      298
+    ],
+    "measured_k": [
+      0.28,
+      0.48
+    ],
+    "maxwell_k": [
+      0.1586124779,
+      0.3559459459
+    ],
+    "bruggeman_k": [
+      0.3010812011,
+      0.5004653253
+    ],
+    "filler_k_proxy": 2.75,
+    "phi": 0.32
+  },
+  "ready_for_manuscript": "conditional_limited_subset_only"
+}

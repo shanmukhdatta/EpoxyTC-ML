@@ -1,0 +1,12 @@
+{
+  "verification": "PASS",
+  "n_checks": 158,
+  "n_passed": 158,
+  "source_cases": 11,
+  "graph_digitized_points": 30,
+  "laboratory_forward_scenarios": 15,
+  "original_csv_fully_authenticated": 0,
+  "scientific_status": "CONDITIONAL_EXPLORATORY_NOT_FULL_LAB_OR_ORIGINAL_DATA_VALIDATION",
+  "physics_source_code": "src/physics.py (existing live repository implementation)",
+  "repository_src_physics_blob_sha": "1e4eed69b974348c43758e7563bcbd8ea879d673"
+}
