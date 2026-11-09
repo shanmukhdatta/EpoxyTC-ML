@@ -1,0 +1,44 @@
+{
+  "verification": "PASS_FOR_SCHEMA_COUNTS_GROUP_SPLIT_AND_FEATURE_COLLISION_AUDIT",
+  "original_rows": 256,
+  "original_csv_names": [
+    "CRYOGENIC_KAGGLE_READY.csv",
+    "ROOM_KAGGLE_READY.csv",
+    "HIGH_KAGGLE_READY.csv"
+  ],
+  "original_input_sha256": {
+    "CRYOGENIC_KAGGLE_READY.csv": "388bec35201c269a097110bb6a7770fd283b97dd176415c50c23d3c6e972e34f",
+    "ROOM_KAGGLE_READY.csv": "7d0e2aff60893058f8e5ed48d853239caffc6110c7d399e5fcbd06c333a27741",
+    "HIGH_KAGGLE_READY.csv": "2507c792280202e7ec426ea018daac5d1e556b0ee15bf135fa1fdda5d9722a09"
+  },
+  "provisional_publications": 11,
+  "regimes_group_splittable_by_code": 2,
+  "regimes_blocked_by_single_publication": [
+    "high"
+  ],
+  "rows_with_missing_filler_loading_unit": 256,
+  "rows_with_missing_row_level_evidence": 256,
+  "rows_with_missing_measurement_type": 256,
+  "room_rows_with_missing_actual_temperature": 160,
+  "same_feature_vector_conflicting_target_groups": 3,
+  "same_feature_vector_conflicting_target_rows": 6,
+  "original_rows_physics_experimentally_authenticated": 0,
+  "recorded_four_feature_deterministic_error_floor": {
+    "cryogenic": {
+      "mae_w_mk": 0.0,
+      "rmse_w_mk": 0.0,
+      "scope": "MATHEMATICAL_FULL_DATA_FIT_LOWER_BOUND_ONLY_NOT_VALIDATION"
+    },
+    "room": {
+      "mae_w_mk": 0.0081875,
+      "rmse_w_mk": 0.052847067089858445,
+      "scope": "MATHEMATICAL_FULL_DATA_FIT_LOWER_BOUND_ONLY_NOT_VALIDATION"
+    },
+    "high": {
+      "mae_w_mk": 0.0,
+      "rmse_w_mk": 0.0,
+      "scope": "MATHEMATICAL_FULL_DATA_FIT_LOWER_BOUND_ONLY_NOT_VALIDATION"
+    }
+  },
+  "note": "This is a nontraining verification of recorded data, not validation of source identities, physical models or experimental observations."
+}
