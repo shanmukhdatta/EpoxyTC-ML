@@ -1,0 +1,7 @@
+temperature_k,filler,n,mean_graph_experimental_k,min_km_required_range_min,min_km_required_range_max,max_ideal_spherical_k_among_proxy_high,n_exceeds_proxy_ceiling,independent_temperature_matched_matrix_property_available,evidence
+4.2,SS304,5,0.388,0.27135,0.31868,0.15294,5,False,GRAPH_READ_AND_EXTERNAL_MATRIX_PROXY
+4.2,Al2O3,5,0.4892,0.36406,0.37363,0.15294,5,False,GRAPH_READ_AND_EXTERNAL_MATRIX_PROXY
+300.0,SS304,5,1.3338,0.96442,1.03687,0.33188,5,False,GRAPH_READ_AND_EXTERNAL_MATRIX_PROXY
+300.0,Al2O3,5,1.3644,0.99188,1.04677,0.33188,5,False,GRAPH_READ_AND_EXTERNAL_MATRIX_PROXY
+323.0,SS304,5,1.3628,0.986,1.05808,0.33188,5,False,GRAPH_READ_AND_EXTERNAL_MATRIX_PROXY
+323.0,Al2O3,5,1.394,1.01412,1.07019,0.33188,5,False,GRAPH_READ_AND_EXTERNAL_MATRIX_PROXY

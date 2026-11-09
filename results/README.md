@@ -77,3 +77,7 @@ Detailed provenance and reviewer status files are stored **outside the results d
 Open a CSV above → verify its notebook cell and evaluation protocol → inspect the matching figure if relevant → check the reviewer evidence index → distinguish **recorded numerical evidence** from a claim that requires further computation or authenticated inputs. If full prediction rows are unavailable, never invent them from summary metrics.
 
 **Directory rule:** `results/` contains the 15 recovered historical CSV tables and this README. Manuscript/reviewer indexes, provenance JSON, and derived metadata are kept under `docs/evidence/`.
+
+## F. Reviewer physical-model evidence (new, separate)
+
+The separately audited [`physics/`](physics/README.md) subdirectory contains conditional Maxwell–Eucken / Bruggeman / Hamilton–Crosser / Lewis–Nielsen / Hashin–Shtrikman results, manuscript Figure 3 approximate digitization, experimental-reference comparisons, SVG plots and verification code. The existing 15 root-level historical CSVs are unchanged. **0 of the original 256 records are fully source-authenticated**; the new physics cases must not be represented as measurements on the exact original data. Reproduce checks with `python results/physics/verify_against_src.py`.

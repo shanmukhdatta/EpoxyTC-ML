@@ -1,0 +1,86 @@
+{
+  "scope": "results/physics only + README files",
+  "source": "Prior V6 executed outputs; verified with exact live GitHub src/physics.py contents",
+  "original_sources_modified": false,
+  "physics_source_reimplemented": false,
+  "source_physics_git_blob_sha": "1e4eed69b974348c43758e7563bcbd8ea879d673",
+  "files": {
+    "results/physics/physics_reviewer_comment_coverage.csv": {
+      "sha256": "f8674b6d458c9be41a6a5bac6eb10534de504f39b78d37281be53a50e08a7adb",
+      "bytes": 3221
+    },
+    "results/physics/source_experiment_model_comparisons.csv": {
+      "sha256": "b98ffb64d52e2c65eaeac12498a6e471e56c18c51cb7c4020cbc85106319f7f4",
+      "bytes": 5971
+    },
+    "results/physics/results_summary.json": {
+      "sha256": "e8e0f2ee4a568f87db9f758b7c12e4c38879f5228d5e379700ab563ee61a7065",
+      "bytes": 1161
+    },
+    "results/physics/lab_fig3_group_plausibility.csv": {
+      "sha256": "cceb612aaae1d0d62d211193e8454532f0181018511f10654a5e09510f7d915e",
+      "bytes": 770
+    },
+    "results/physics/raw_lab_measurement_template.csv": {
+      "sha256": "066586498d5d8caccbb24361c305485e1c730b23a8fd636b08b9dfb474c133ac",
+      "bytes": 4626
+    },
+    "results/physics/physical_property_source_register.csv": {
+      "sha256": "c91dcd054d45bebad485bb253e58a4b88ef80b7a098066942f241c028e59f3c3",
+      "bytes": 2300
+    },
+    "results/physics/lab_fig3_forward_model_scenarios.csv": {
+      "sha256": "594b2f688074161e1cf4f2352759a9c9b2c3c0507912b6df80b4ae2568f0cbce",
+      "bytes": 4619
+    },
+    "results/physics/core_results.csv": {
+      "sha256": "5abb20276271f2dc7a9cecc4aa986573e91a68ef9e29212ac8cab30c71ae3d14",
+      "bytes": 2463
+    },
+    "results/physics/manuscript_tables_2_4_6_recalculated_errors.csv": {
+      "sha256": "56828c2da284496c996e32e335574b59d7a195947800341a2548a3ab445c749c",
+      "bytes": 4178
+    },
+    "results/physics/lab_fig3_geometry_sensitivity.csv": {
+      "sha256": "7c31a4a03bfc8a093613626ac818803774f3f88b411363fab708513802b8e5de",
+      "bytes": 12559
+    },
+    "results/physics/verify_against_src.py": {
+      "sha256": "ff32b2c70298844f5c4c7ed79110ef0788ede54550d5cc9b15c2f5ed2595edb2",
+      "bytes": 4785
+    },
+    "results/physics/lab_figure3_digitized_approx.csv": {
+      "sha256": "f0b822184fa121234b6725f78b03b3b2834d1db686090463aa6ecae9710d1102",
+      "bytes": 12337
+    },
+    "results/physics/lab_fig3_maxwell_inverse_checks.csv": {
+      "sha256": "1366f33d23fb2a6be376097a830e95445957afd38e7206ea614a7a36dc464957",
+      "bytes": 11245
+    },
+    "results/physics/lab_digitized_core.csv": {
+      "sha256": "4de022fe45067b782e941421f759386a5e08741923203c2aa0f59d96cbf19272",
+      "bytes": 1551
+    },
+    "results/physics/PAPER_READY.md": {
+      "sha256": "d5e301d97c598e9a7565792e3799c0d52ed2a485562affa3e2fd866bccf76b78",
+      "bytes": 2512
+    },
+    "results/physics/verification_results.json": {
+      "sha256": "c63ab8fef50cc8d3c465ab18ec20d722a120d0d304f2cc95c46acfaf231d0e03",
+      "bytes": 457
+    },
+    "results/physics/README.md": {
+      "sha256": "e8f40fc7b8319100982bccbb5176881f4a74232b999ba2a6377a49d28ed09a84",
+      "bytes": 2955
+    },
+    "results/physics/figures/ref23_models.svg": {
+      "sha256": "0ec6b89af18022462ed14a70c61eec1627317389548349ff060205ae54d1997c",
+      "bytes": 55854
+    },
+    "results/physics/figures/lab_figure3_300k.svg": {
+      "sha256": "114876ff3b399c113daff01799dc78249fd3c1c33f38f18fd18e9860f76758d9",
+      "bytes": 59328
+    }
+  },
+  "warning": "Checks establish arithmetic reproducibility, NOT experimental provenance or raw lab uncertainty."
+}

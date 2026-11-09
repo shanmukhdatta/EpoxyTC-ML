@@ -1,0 +1,18 @@
+comment_id,issue,reviewer_pdf_location,status,artifact,limitation
+R1-5,Classical EMT baselines & uncertainty,Reviewer1 p1,IMPLEMENTED_CONDITIONAL,SOURCE_EXPERIMENT_MODEL_COMPARISONS.csv,Literature-supported prediction scenarios; no ML-on-identical-case predictions available
+R1-6,Mixed classes and microstructure,Reviewer1 p1,AUDITED,V5/ALL_11_SOURCES_FINAL_AUDIT.csv,"Non-epoxy, high-aspect ratio and anisotropy invalidate single two-phase universal model"
+R1-7,High-temperature mismatch,Reviewer1 p1-2,PARTIAL,LAB_FIG3_ALL_30_MAXWELL_INVERSE_REQUIREMENTS.csv,323 K original material k(T) unavailable
+R1-9,External validation individual percent errors,Reviewer1 p2,COMPLETED_TRANSCRIPTION,MANUSCRIPT_EXISTING_TABLES_2_4_6_CORRECTED_ERRORS.csv,Review original source identities and obtain lab ML raw predictions
+R1-10,Separate theoretical from experimental benchmarks,Reviewer1 p2,COMPLETED_CLASSIFICATION,MANUSCRIPT_EXISTING_TABLES_2_4_6_CORRECTED_ERRORS.csv,Experimental references claimed in manuscript are not independently authenticated
+R1-11,Temperature continuity and regime physics,Reviewer1 p2,DOCUMENTED_LIMIT,PAPER_READY_PHYSICS_SECTION.md,No continuous constituent k across missing T interval
+R1-12,GUM/calibration,Reviewer1 p2,EQUATIONS_IMPLEMENTED_MEASUREMENTS_MISSING,code/complete_reviewer_physics.py,No heater/dT/L/A/contact/radiation logs; cannot compute actual u_c or 323K calibration
+R1-13,Physical plausibility at 4.2/300K,Reviewer1 p2,IMPLEMENTED_CONDITIONAL,LAB_FIG3_ALL_30_MAXWELL_INVERSE_REQUIREMENTS.csv,Measured figure estimates and other epoxy grades as proxies
+R1-15,Causal physical mechanism interpretations,Reviewer1 p3,WRITING_LIMIT,PAPER_READY_PHYSICS_SECTION.md,Feature importance cannot establish interface resistance and percolation
+R2-9,Heat flow uncertainty budget,Reviewer2 p5,EQUATIONS_IMPLEMENTED_MEASUREMENTS_MISSING,code/complete_reviewer_physics.py,Actual raw sensor precision and contact errors missing
+R2-10,Fourier law and steady state,Reviewer2 p5,EQUATION_IMPLEMENTED_PROTOCOL_MISSING,code/complete_reviewer_physics.py,Cannot retrospectively certify steady-state without time series
+R2-11,Constituent properties and HS/Maxwell bounds,Reviewer2 p5,IMPLEMENTED_CONDITIONAL,LAB_FIG3_15_FORWARD_MODEL_SCENARIOS.csv,No exact unfilled epoxy and Al2O3 cryogenic grade k
+R2-14,Feature importance not causal,Reviewer2 p6,WRITING_LIMIT,PAPER_READY_PHYSICS_SECTION.md,No microstructure/thermal interface measurements
+R2-16,Separate analytical and experimental benchmarks,Reviewer2 p6,COMPLETED_CLASSIFICATION,MANUSCRIPT_EXISTING_TABLES_2_4_6_CORRECTED_ERRORS.csv,Not the same as ML vs EMT paired comparison
+R2-17,Per-case external prediction errors,Reviewer2 p6,COMPLETED_TRANSCRIPTION,MANUSCRIPT_EXISTING_TABLES_2_4_6_CORRECTED_ERRORS.csv,"No numeric lab ML predictions; figure-only, omit pretending exact"
+R3-4,Experimental GUM uncertainty,Reviewer3 p7,EQUATIONS_IMPLEMENTED_MEASUREMENTS_MISSING,code/complete_reviewer_physics.py,Cannot produce data-driven uncertainty budgets without measurements
+R3-5,Independent laboratory ML errors,Reviewer3 p8,REQUIRES_RAW_PREDICTIONS,PAPER_READY_PHYSICS_SECTION.md,Manuscript figures not machine-readable raw model outputs
