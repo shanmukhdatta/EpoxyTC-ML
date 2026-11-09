@@ -1,5 +1,6 @@
 """Publication-held-out splitting and train-only preprocessing."""
 import numpy as np
+import pandas as pd
 from sklearn.model_selection import GroupShuffleSplit, GroupKFold
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
@@ -57,7 +58,7 @@ def make_preprocessor(kind='standard'):
 
 def grouped_folds(X, y, groups, n_splits):
     groups = np.asarray(groups)
-    if any(x is None for x in groups):
+    if pd.isna(groups).any():
         raise ValueError('Missing group identifiers')
     for train, test in GroupKFold(n_splits=n_splits).split(X, y, groups):
         if set(groups[train]) & set(groups[test]):
