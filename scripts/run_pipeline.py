@@ -4,9 +4,9 @@ import argparse
 import json
 from pathlib import Path
 
-from deepoxy.data import HISTORICAL_ROWS, load_original_datasets
-from deepoxy.eda import summarize
-from deepoxy.reporting import save_config, save_csv
+from src.data import HISTORICAL_ROWS, load_original_datasets
+from src.eda import summarize
+from src.reporting import save_config, save_csv
 
 
 def execute(data_dir, output_dir, allow_row_count_mismatch=False):

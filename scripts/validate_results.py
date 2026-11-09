@@ -4,9 +4,9 @@ import argparse
 import json
 from pathlib import Path
 
-from deepoxy.data import sha256_file
-from deepoxy.evaluation import evaluate_prediction_table
-from deepoxy.reporting import load_verified_predictions, save_csv, save_config
+from src.data import sha256_file
+from src.evaluation import evaluate_prediction_table
+from src.reporting import load_verified_predictions, save_csv, save_config
 
 
 def execute(predictions_path, output_dir):

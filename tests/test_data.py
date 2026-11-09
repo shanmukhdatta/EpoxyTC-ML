@@ -1,6 +1,6 @@
 import pandas as pd
 import pytest
-from deepoxy.data import load_csv, load_original_datasets, provenance_table, sha256_file
+from src.data import load_csv, load_original_datasets, provenance_table, sha256_file
 
 
 def test_csv_preserved_and_hashed(tmp_path):

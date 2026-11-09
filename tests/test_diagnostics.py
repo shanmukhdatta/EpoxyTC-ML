@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import pytest
-from deepoxy.diagnostics import residuals, prediction_residual_table, interval_coverage
+from src.diagnostics import residuals, prediction_residual_table, interval_coverage
 
 
 def test_saved_prediction_residuals():

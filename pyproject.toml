@@ -22,8 +22,10 @@ dependencies = [
 test = ["pytest>=8,<10"]
 optional-models = ["xgboost>=2,<4", "optuna>=3,<5"]
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.setuptools]
+# The scientific modules intentionally live directly under src/.
+# "deepoxy" is the distribution name; "src" is the import package.
+packages = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

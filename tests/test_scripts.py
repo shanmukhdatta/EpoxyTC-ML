@@ -13,7 +13,7 @@ def test_runner_modules_compile_and_import():
 
 
 def test_results_validation_script_with_existing_predictions(tmp_path):
-    from deepoxy.reporting import save_csv
+    from src.reporting import save_csv
     import subprocess
     import sys
     import os

@@ -64,7 +64,7 @@ These are notebook-reported historical figures, **not final manuscript claims**.
 
 The following are **seven new SVG visualizations of the recovered CSV data**, not a replacement for the executed notebook's original PNG figures:
 
-[All seven regenerated result figures](../figures/recovered)
+[All seven regenerated result figures](../figures/README.md)
 
 Detailed provenance and reviewer status files are stored **outside the results directory**:
 

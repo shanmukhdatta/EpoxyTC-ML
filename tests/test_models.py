@@ -1,5 +1,5 @@
 import pytest
-from deepoxy.models import (make_model, make_tabfm_regressor, CORE_SEARCH_SPACES)
+from src.models import (make_model, make_tabfm_regressor, CORE_SEARCH_SPACES)
 
 
 @pytest.mark.parametrize("name", [

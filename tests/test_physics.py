@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from deepoxy.physics import (maxwell_eucken, bruggeman_symmetric, hashin_shtrikman,
+from src.physics import (maxwell_eucken, bruggeman_symmetric, hashin_shtrikman,
                             hamilton_crosser, lewis_nielsen, fourier_conductivity,
                             fourier_independent_uncertainty)
 

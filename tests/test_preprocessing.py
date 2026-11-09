@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import pytest
-from deepoxy.preprocessing import (publication_split, assert_disjoint_splits,
+from src.preprocessing import (publication_split, assert_disjoint_splits,
                                    validate_frozen_splits, grouped_folds, make_preprocessor)
 
 

@@ -5,9 +5,9 @@ import json
 from pathlib import Path
 import pandas as pd
 
-from deepoxy.training import core_nested_cv
-from deepoxy.evaluation import evaluate_prediction_table
-from deepoxy.reporting import load_verified_predictions, save_csv, save_config
+from src.training import core_nested_cv
+from src.evaluation import evaluate_prediction_table
+from src.reporting import load_verified_predictions, save_csv, save_config
 
 
 def execute(data_path=None, output_dir="results", models=("ExtraTrees",),

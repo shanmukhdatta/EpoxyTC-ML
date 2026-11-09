@@ -1,6 +1,6 @@
 import pandas as pd
 import pytest
-from deepoxy.reporting import (save_csv, save_config, verify_files,
+from src.reporting import (save_csv, save_config, verify_files,
                                 load_verified_predictions, export_verified_results)
 
 

@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from deepoxy.augmentation import (augment_train_only, duplicate_training_rows,
+from src.augmentation import (augment_train_only, duplicate_training_rows,
                                    find_compatible_pairs, make_cmix_training_data)
 
 

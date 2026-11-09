@@ -1,6 +1,6 @@
 import pandas as pd
 import pytest
-from deepoxy.preprocessing import assert_disjoint_splits, validate_frozen_splits
+from src.preprocessing import assert_disjoint_splits, validate_frozen_splits
 
 
 def test_valid_frozen_partition():

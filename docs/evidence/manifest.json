@@ -183,7 +183,7 @@
   ],
   "regenerated_figures": [
     {
-      "path": "figures/recovered/augmentation_selected_delta_mae.svg",
+      "path": "figures/augmentation_selected_delta_mae.svg",
       "git_blob_sha1": "4c76a59541ddb8ae46f36c03d6d674ed24b5c0be",
       "bytes": 4220,
       "source": "derived from curated recovered CSV",
@@ -191,7 +191,7 @@
       "model_training_performed": false
     },
     {
-      "path": "figures/recovered/cryogenic_gradientboosting_permutation_importance.svg",
+      "path": "figures/cryogenic_gradientboosting_permutation_importance.svg",
       "git_blob_sha1": "373b3ceb145dfbfbfa8dec26c056af36cc9680ad",
       "bytes": 3401,
       "source": "derived from curated recovered CSV",
@@ -199,7 +199,7 @@
       "model_training_performed": false
     },
     {
-      "path": "figures/recovered/cryogenic_nine_model_mean_fold_mae.svg",
+      "path": "figures/cryogenic_nine_model_mean_fold_mae.svg",
       "git_blob_sha1": "e91472bcad38b6a65dff9af31039e52030872b56",
       "bytes": 4887,
       "source": "derived from curated recovered CSV",
@@ -207,7 +207,7 @@
       "model_training_performed": false
     },
     {
-      "path": "figures/recovered/cryogenic_ood_mae.svg",
+      "path": "figures/cryogenic_ood_mae.svg",
       "git_blob_sha1": "c8b1159ffd3d109d0f4dd5239aaaf9c23bac797f",
       "bytes": 2979,
       "source": "derived from curated recovered CSV",
@@ -215,7 +215,7 @@
       "model_training_performed": false
     },
     {
-      "path": "figures/recovered/high_temperature_exploratory_mae.svg",
+      "path": "figures/high_temperature_exploratory_mae.svg",
       "git_blob_sha1": "01590746249a3bcb3eecd243ef54bd8923b471b7",
       "bytes": 3102,
       "source": "derived from curated recovered CSV",
@@ -223,7 +223,7 @@
       "model_training_performed": false
     },
     {
-      "path": "figures/recovered/record_counts_by_regime.svg",
+      "path": "figures/record_counts_by_regime.svg",
       "git_blob_sha1": "533338d8f7e6996d69d20ad7797ea1b5ceca85bc",
       "bytes": 3158,
       "source": "derived from curated recovered CSV",
@@ -231,7 +231,7 @@
       "model_training_performed": false
     },
     {
-      "path": "figures/recovered/room_nine_model_mean_fold_mae.svg",
+      "path": "figures/room_nine_model_mean_fold_mae.svg",
       "git_blob_sha1": "5fea43fedbed7ac225416dee22711fb554539322",
       "bytes": 4878,
       "source": "derived from curated recovered CSV",
@@ -256,5 +256,5 @@
     "Physics equation testing does not authenticate row-level physics-versus-ML comparisons",
     "The original notebook recorded two early TabFM import errors before later successful experiments"
   ],
-  "file_organization_note": "Recovered tables are shown directly in results/; evidence metadata was moved to docs/evidence/ without changing source data."
+  "file_organization_note": "Recovered tables are shown directly in results/; evidence metadata was moved to docs/evidence/ without changing source data. Seven SVG visualizations are now direct children of figures/ and the code modules are direct children of src/."
 }

@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import pytest
-from deepoxy.evaluation import (regression_metrics, exact_sign_flip,
+from src.evaluation import (regression_metrics, exact_sign_flip,
                                 paired_fold_comparison, evaluate_prediction_table,
                                 absolute_relative_errors)
 

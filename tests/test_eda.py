@@ -1,7 +1,7 @@
 import matplotlib
 matplotlib.use("Agg")
 import pandas as pd
-from deepoxy.eda import summarize, iqr_outliers, correlation_table, plot_distribution, plot_scatter
+from src.eda import summarize, iqr_outliers, correlation_table, plot_distribution, plot_scatter
 
 
 def test_eda_is_non_destructive():

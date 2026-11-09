@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
-from deepoxy.training import grouped_reference_cv, core_nested_cv
-from deepoxy.models import CORE_SEARCH_SPACES
+from src.training import grouped_reference_cv, core_nested_cv
+from src.models import CORE_SEARCH_SPACES
 
 
 def _synthetic_frozen_data():

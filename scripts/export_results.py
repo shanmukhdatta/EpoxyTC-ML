@@ -2,7 +2,7 @@
 """Checksum-verify and archive actual saved results; no computation is repeated."""
 import argparse
 import json
-from deepoxy.reporting import export_verified_results
+from src.reporting import export_verified_results
 
 
 def main(argv=None):
