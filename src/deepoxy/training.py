@@ -13,7 +13,11 @@ def core_nested_cv(data, model_names=('ExtraTrees','GradientBoosting','XGBoost',
     """Return fold metrics, predictions, tuning records; no final test fitting."""
     assert_disjoint_splits(data)
     development = data.loc[data['split'].isin(['train','validation'])].copy()
-    features = [c for c in FEATURES if c in development and development[c].notna().any()]
+    # Select by schema alone; imputation and any dropping of empty columns are
+    # fitted by the pipeline on each inner training fold.  The original cell 48
+    # selected nonempty columns using all development rows before outer CV.
+    # This deliberately removes that leakage and requires fresh parity checks.
+    features = [c for c in FEATURES if c in development]
     X = development[features].apply(pd.to_numeric, errors='coerce')
     y = pd.to_numeric(development[TARGET], errors='coerce')
     groups = development['publication_id']
