@@ -1,11 +1,13 @@
 # DEEPOXY — Epoxy Thermal Conductivity ML
-Modular research code for leakage-aware analysis of cryogenic, room-temperature, and elevated-temperature datasets.
-Datasets, experiment results, and scientific conclusions will be added only after verification.
 
-## Reviewer physics equation results (limited and conditional)
+Evidence-first research code for cryogenic, room-temperature and elevated-temperature thermal-conductivity modeling.
 
-The existing [`src/physics.py`](src/physics.py) implements Maxwell–Eucken, Bruggeman, Hamilton–Crosser, Lewis–Nielsen, Hashin–Shtrikman bounds and Fourier-law utilities. See [`results/physics/`](results/physics/README.md) for source-reconstructed model comparisons, approximately digitized manuscript Figure 3 readings, vector plots, 158 numerical replay checks and evidence-status limitations. These are **not** validation of all 256 original CSV observations; laboratory GUM calibration inputs are not yet available.
+- [`src/`](src/README.md) — implemented ML and physics equations, including [`src/physics.py`](src/physics.py).
+- [`results/`](results/README.md) — **flat directory of 28 CSV tables plus one README**, with no nested physics/verification folders.
+- [`figures/`](figures/README.md) — the original summary figures and two qualified physics comparison SVGs.
+- [`scripts/`](scripts/) — model runners and reproducibility checks, including `verify_physics_results.py` and `verify_data_integrity.py`.
+- [`docs/evidence/`](docs/evidence/) — source notes, conditional paper draft, reviewer index and laboratory input template.
 
-## Original dataset and reviewer verification gates
+Run `python -m pytest -q` and `python scripts/verify_physics_results.py` to check the repository. To audit original data, use `python scripts/verify_data_integrity.py --data-dir /path/to/original/CSVs --output-dir /path/to/new/audit`.
 
-The executed [`results/verification/`](results/verification/README.md) audit checks the three original 256-row CSVs against their recorded source metadata and provisional group-split feasibility; it documents three cases of identical recorded ML inputs with different targets. The original CSVs remain off-repository and unchanged. These checks **do not** establish authentic source provenance or full experimental validation.
+**Evidence limits:** The 256 original rows do not yet have authenticated specimen provenance/volume-fraction evidence. The physics calculations use conditional source reconstructions or property proxies. The laboratory uncertainty budget requires original instrument data. The high-temperature dataset has one provisional publication; no cross-publication generalization has been established. The original raw CSVs are off-repository and unchanged.
