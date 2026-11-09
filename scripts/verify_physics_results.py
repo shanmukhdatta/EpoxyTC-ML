@@ -1,7 +1,7 @@
 """Verification-first audit of committed physics tables using existing src.physics.
 
 Run from repo root:
-    python results/physics/verify_against_src.py
+    python scripts/verify_physics_results.py
 No experimental property is inferred from the predictions.
 """
 from pathlib import Path
@@ -12,13 +12,13 @@ import sys
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.physics import (maxwell_eucken, bruggeman_symmetric, hashin_shtrikman,
                          hamilton_crosser, lewis_nielsen, fourier_conductivity,
                          fourier_independent_uncertainty)
 
-HERE = Path(__file__).resolve().parent
+HERE = ROOT / 'results'
 checks = []
 
 def check(label, condition):

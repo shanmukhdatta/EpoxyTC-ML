@@ -1,6 +1,6 @@
 # DEEPOXY — Results figures
 
-This folder contains **seven SVG figures directly under `figures/`**, each generated from the numerical tables recovered from the executed `epoxty-checking.ipynb`. There is no nested `recovered/` folder.
+This folder contains **nine SVG figures directly under `figures/`**, seven generated from the recovered notebook results and two from conditional physics comparisons. There is no nested `recovered/` folder.
 
 They are **regenerated visualizations of historical reported values**, **not the original 145 embedded PNG images**, and were created without training or rerunning ML models.
 
@@ -25,3 +25,13 @@ They are **regenerated visualizations of historical reported values**, **not the
 - Original notebook PNG figures have **not** been imported here.
 
 See [`results/README.md`](../results/README.md) for completed computations, remaining tasks, notebook cell references and caveats. See [`docs/evidence/manifest.json`](../docs/evidence/manifest.json) for figure blob hashes and provenance.
+
+
+## Two physics figures (kept directly in `figures/`)
+
+| Figure | Description | Data |
+|---|---|---|
+| [`physics_ref23_models.svg`](physics_ref23_models.svg) | Published REF_23 measurements with conditional effective-medium predictions | [Source comparison](../results/source_experiment_model_comparisons.csv) |
+| [`physics_lab_figure3_300k.svg`](physics_lab_figure3_300k.svg) | Approximate manuscript Figure 3 markers and proxy-property model predictions | [Digitized readings](../results/lab_figure3_digitized_approx.csv) |
+
+Neither plot establishes experimental validation for all 256 original readings. Graph-read uncertainty is not an instrument calibration uncertainty.
