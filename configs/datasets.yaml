@@ -1,0 +1,20 @@
+# Paths refer to files the repository owner will add later; no data is generated.
+raw_directory: data/raw
+regimes:
+  cryogenic:
+    file: CRYOGENIC_KAGGLE_READY.csv
+    historical_rows: 54
+  room:
+    file: ROOM_KAGGLE_READY.csv
+    historical_rows: 160
+  high:
+    file: HIGH_KAGGLE_READY.csv
+    historical_rows: 42
+features:
+  - base_tc_w_mk
+  - filler_tc_w_mk
+  - filler_loading_as_recorded
+  - temperature_k_recorded
+target: composite_tc_w_mk
+publication_column: publication_id
+source_status: provisional_identifiers_unverified

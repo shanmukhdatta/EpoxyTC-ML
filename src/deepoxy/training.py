@@ -36,3 +36,37 @@ def core_nested_cv(data, model_names=('ExtraTrees','GradientBoosting','XGBoost',
             predictions.extend({'model':name,'fold':fold,'row_index':idx,'observed':truth,'predicted':p} for idx,truth,p in zip(X.iloc[ev].index,y.iloc[ev],pred))
             tuning.append({'model':name,'fold':fold,'best_params':search.best_params_,'best_inner_mae':-search.best_score_})
     return pd.DataFrame(metrics),pd.DataFrame(predictions),pd.DataFrame(tuning)
+
+
+def grouped_reference_cv(frame, models=("ExtraTrees", "GradientBoosting"), *,
+                         group_column="publication_id", seed=42):
+    """Fixed-configuration reference folds; NOT the tuned notebook benchmark."""
+    from sklearn.base import clone
+    dev = frame.loc[frame["split"].isin(["train", "validation"])].copy()
+    if dev.empty or dev[group_column].isna().any():
+        raise ValueError("Nonempty, source-identified development rows required")
+    groups = dev[group_column]
+    if groups.nunique() < 3:
+        raise ValueError("At least three independent development source groups required")
+    cols = [col for col in FEATURES if col in dev.columns]
+    X = dev[cols].apply(pd.to_numeric, errors="coerce")
+    y = pd.to_numeric(dev[TARGET], errors="raise")
+    metric_rows, prediction_rows = [], []
+    for fold, (tr, ev) in enumerate(GroupKFold(n_splits=groups.nunique()).split(X, y, groups), 1):
+        for model_name in models:
+            pipeline = Pipeline([
+                ("imputer", SimpleImputer(strategy="median")),
+                ("scaler", StandardScaler()),
+                ("model", clone(make_model(model_name, seed=seed))),
+            ])
+            pipeline.fit(X.iloc[tr], y.iloc[tr])
+            predictions = pipeline.predict(X.iloc[ev])
+            metric_rows.append({"model": model_name, "fold": fold,
+                                "held_out_publication": str(groups.iloc[ev].iloc[0]),
+                                "experiment": "fixed_reference_not_notebook_tuned",
+                                **regression_metrics(y.iloc[ev].to_numpy(), predictions)})
+            prediction_rows.extend({
+                "model": model_name, "fold": fold, "row_index": str(row),
+                "observed": float(actual), "predicted": float(predicted),
+            } for row, actual, predicted in zip(dev.index[ev], y.iloc[ev], predictions))
+    return pd.DataFrame(metric_rows), pd.DataFrame(prediction_rows)

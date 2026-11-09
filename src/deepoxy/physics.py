@@ -51,3 +51,28 @@ def lewis_nielsen(km, kf, phi, A, phi_max):
     den = 1-B*psi*phi
     if den <= 0: raise ValueError('Lewis–Nielsen denominator nonpositive.')
     return float(km*(1+A*B*phi)/den)
+
+
+def fourier_conductivity(heat_flow_w, length_m, area_m2, delta_temperature_k):
+    """One-dimensional steady-state estimate; inputs must be measured and corrected."""
+    v = np.asarray([heat_flow_w, length_m, area_m2, delta_temperature_k], dtype=float)
+    if not np.isfinite(v).all() or np.any(v <= 0):
+        raise ValueError("Finite positive corrected heat flow, length, area and ΔT required")
+    return float(heat_flow_w * length_m / (area_m2 * delta_temperature_k))
+
+def fourier_independent_uncertainty(heat_flow_w, u_heat_flow_w, length_m,
+                                    u_length_m, area_m2, u_area_m2,
+                                    delta_temperature_k, u_delta_temperature_k):
+    """First-order independent standard uncertainty, not a complete GUM budget.
+
+    Correlation, contact resistance, heat leak and calibration require actual
+    experimental evidence; this function does not invent those contributions.
+    """
+    k = fourier_conductivity(heat_flow_w, length_m, area_m2, delta_temperature_k)
+    u = np.asarray([u_heat_flow_w, u_length_m, u_area_m2, u_delta_temperature_k], dtype=float)
+    v = np.asarray([heat_flow_w, length_m, area_m2, delta_temperature_k], dtype=float)
+    if not np.isfinite(u).all() or np.any(u < 0):
+        raise ValueError("Uncertainties must be finite and nonnegative")
+    return {"conductivity_w_mk": k,
+            "combined_standard_uncertainty_w_mk": float(k * np.sqrt(np.sum((u/v)**2))),
+            "assumption": "Independent input uncertainties; unmodeled laboratory effects excluded"}

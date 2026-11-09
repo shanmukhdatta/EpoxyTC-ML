@@ -39,3 +39,37 @@ def source_audit(frame, source_column='publication_id', evidence_columns=()):
     return {'source_counts': counts, 'missing_source_rows': int(frame[source_column].isna().sum()),
             'missing_evidence_columns': missing_evidence,
             'warning': 'Publication identifiers do not independently verify experimental source evidence.'}
+
+
+REGIME_FILENAMES = {
+    "cryogenic": "CRYOGENIC_KAGGLE_READY.csv",
+    "room": "ROOM_KAGGLE_READY.csv",
+    "high": "HIGH_KAGGLE_READY.csv",
+}
+
+def resolve_regime_paths(directory):
+    """Locate the three *existing* raw CSV files without changing them."""
+    root = Path(directory)
+    paths = {regime: root / filename for regime, filename in REGIME_FILENAMES.items()}
+    missing = [str(path) for path in paths.values() if not path.is_file()]
+    if missing:
+        raise FileNotFoundError("Missing original datasets: " + ", ".join(missing))
+    return paths
+
+def load_original_datasets(directory, required_columns=()):
+    """Return frames and provenance metadata from caller-provided originals."""
+    return load_regimes(resolve_regime_paths(directory), required_columns=required_columns)
+
+def provenance_table(frame, source_column="publication_id", evidence_columns=()):
+    """Summarize sources without implying independently authenticated references."""
+    if source_column not in frame.columns:
+        raise ValueError("Missing publication/source identifier: " + source_column)
+    rows = []
+    for source, part in frame.groupby(source_column, dropna=False):
+        record = {"publication_id": str(source), "n_rows": int(len(part)),
+                  "source_verification": "UNVERIFIED"}
+        for col in evidence_columns:
+            record[f"{col}_present_rows"] = (int(part[col].notna().sum())
+                                             if col in part else 0)
+        rows.append(record)
+    return pd.DataFrame(rows)

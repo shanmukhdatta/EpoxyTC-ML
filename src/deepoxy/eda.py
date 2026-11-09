@@ -23,3 +23,26 @@ def plot_distribution(frame, column, ax=None):
     pd.to_numeric(frame[column], errors='coerce').dropna().hist(ax=ax)
     ax.set_xlabel(column)
     return ax
+
+
+def correlation_table(frame, columns):
+    """Pairwise descriptive correlations; never infer causal mechanisms."""
+    numeric = frame[list(columns)].apply(pd.to_numeric, errors="coerce")
+    return numeric.corr()
+
+def plot_scatter(frame, x, y, ax=None):
+    import matplotlib.pyplot as plt
+    if ax is None:
+        _, ax = plt.subplots()
+    ax.scatter(pd.to_numeric(frame[x], errors="coerce"),
+               pd.to_numeric(frame[y], errors="coerce"), alpha=0.6)
+    ax.set(xlabel=x, ylabel=y)
+    return ax
+
+def plot_missingness(frame, ax=None):
+    import matplotlib.pyplot as plt
+    if ax is None:
+        _, ax = plt.subplots()
+    frame.isna().sum().plot.bar(ax=ax)
+    ax.set(ylabel="Missing row count")
+    return ax

@@ -1,0 +1,10 @@
+# Historical numerical outputs are authoritative only after artifact and split verification.
+seed: 42
+historical_reference_notebook: epoxty-checking.ipynb
+extended_reference_notebook: DEEPOXY_FINAL_KAGGLE_MANUAL_TABFM_INSTALL_RESTORED.ipynb
+run_expensive_models_by_default: false
+use_saved_outputs_first: true
+development_validation: publication_grouped
+high_temperature_validation: exploratory_only_single_publication
+reserved_test_policy: never_use_for_tuning
+results_directory: results

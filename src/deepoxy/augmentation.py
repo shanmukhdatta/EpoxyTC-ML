@@ -185,3 +185,14 @@ def make_cmix_training_data(X, y, pairs, seed):
     }
 
     return variants
+
+
+def duplicate_training_rows(X_train, y_train, copies=2):
+    """A train-only matched duplication control; never augment evaluation rows."""
+    if not isinstance(copies, int) or copies < 0:
+        raise ValueError("copies must be a nonnegative integer")
+    y = np.asarray(y_train)
+    if len(X_train) != len(y):
+        raise ValueError("Feature and target row counts differ")
+    return (pd.concat([X_train.copy()] * (copies + 1), ignore_index=True),
+            np.tile(y, copies + 1))

@@ -64,3 +64,21 @@ def grouped_folds(X, y, groups, n_splits):
         if set(groups[train]) & set(groups[test]):
             raise ValueError('Group leakage')
         yield train, test
+
+
+def validate_frozen_splits(frame, group="publication_id", split="split",
+                           require_all_three=True):
+    """Reject absent/overlapping publication assignments in frozen data."""
+    if split not in frame or group not in frame:
+        raise ValueError("Frozen split and publication ID columns are required")
+    if frame[group].isna().any() or frame[split].isna().any():
+        raise ValueError("Missing group/split labels")
+    labels = set(frame[split].unique())
+    allowed = {"train", "validation", "test"}
+    if not labels.issubset(allowed) or (require_all_three and labels != allowed):
+        raise ValueError(f"Unexpected frozen split labels: {sorted(labels)}")
+    for a in labels:
+        for b in labels - {a}:
+            if set(frame.loc[frame[split] == a, group]) & set(frame.loc[frame[split] == b, group]):
+                raise ValueError(f"Publication leakage between {a} and {b}")
+    return True
