@@ -1,4 +1,4 @@
-# DEEPOXY — Epoxy Thermal Conductivity ML
+# Epoxy Thermal Conductivity ML
 
 Evidence-first research code for cryogenic, room-temperature and elevated-temperature thermal-conductivity modeling.
 
