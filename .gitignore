@@ -13,7 +13,10 @@ dist/
 *.pth
 *.pkl
 *.joblib
-# Tracked, reviewed public six-column data live in data/processed/.\n# Do not accidentally upload full third-party raw files or private provenance.\ndata/raw/\ndata/provenance/
+# Tracked, reviewed public six-column data live in data/processed/.
+# Do not accidentally upload full third-party raw files or private provenance.
+data/raw/
+data/provenance/
 # Curated results and SVG figures are intentionally tracked.
 # Large raw model artifacts are reviewed separately before Git publication.
 .env
