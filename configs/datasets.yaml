@@ -1,20 +1,19 @@
-# Paths refer to files the repository owner will add later; no data is generated.
-raw_directory: data/raw
+# Public six-column data. Historical 24-column originals are not committed.
+public_directory: data/processed
 regimes:
-  cryogenic:
-    file: CRYOGENIC_KAGGLE_READY.csv
-    historical_rows: 54
-  room:
-    file: ROOM_KAGGLE_READY.csv
-    historical_rows: 160
-  high:
-    file: HIGH_KAGGLE_READY.csv
-    historical_rows: 42
+  cryogenic: {file: CRYOGENIC.csv, original_rows: 54, source_groups_provisional: 5}
+  room: {file: ROOM.csv, original_rows: 160, source_groups_provisional: 5, recorded_temperature_rows: 0}
+  high: {file: HIGH.csv, original_rows: 42, source_groups_provisional: 1}
 features:
   - base_tc_w_mk
   - filler_tc_w_mk
   - filler_loading_as_recorded
   - temperature_k_recorded
 target: composite_tc_w_mk
-publication_column: publication_id
-source_status: provisional_identifiers_unverified
+source_group_metadata: source_ref
+source_authentication: incomplete
+historical_full_input_filenames:
+  - CRYOGENIC_KAGGLE_READY.csv
+  - ROOM_KAGGLE_READY.csv
+  - HIGH_KAGGLE_READY.csv
+training_requires_separately_verified_frozen_splits: true

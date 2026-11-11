@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "deepoxy"
+name = "epoxy-thermal-conductivity-ml"
 version = "0.1.0"
-description = "Reproducible, explicit-input tools for epoxy thermal conductivity ML"
+description = "Research tools accompanying the epoxy-composite thermal-conductivity manuscript"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
@@ -24,7 +24,7 @@ optional-models = ["xgboost>=2,<4", "optuna>=3,<5"]
 
 [tool.setuptools]
 # The scientific modules intentionally live directly under src/.
-# "deepoxy" is the distribution name; "src" is the import package.
+# Package distribution title follows the paper; the historical import package "src" is preserved.
 packages = ["src"]
 
 [tool.pytest.ini_options]

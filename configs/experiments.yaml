@@ -1,4 +1,4 @@
-# Historical numerical outputs are authoritative only after artifact and split verification.
+# Historical notebook names are identifiers only; source notebooks are not bundled.\n# Summary output is not complete end-to-end experiment parity.
 seed: 42
 historical_reference_notebook: epoxty-checking.ipynb
 extended_reference_notebook: DEEPOXY_FINAL_KAGGLE_MANUAL_TABFM_INSTALL_RESTORED.ipynb

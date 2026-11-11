@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Cite the manuscript when publicly available; until then cite this repository by its Git commit."
+type: software
+title: "Thermal Conductivity of Particle-Filled Epoxy: Experimental and Machine-Learning Assessment Across Three Regimes — Research code and curated data"
+authors:
+  - family-names: Kumar
+    given-names: Manas
+  - family-names: Bansal
+    given-names: Lalit
+  - family-names: Yenni
+    given-names: Govinda Rao
+  - family-names: Verma
+    given-names: Ravi
+  - family-names: Awasthi
+    given-names: Pradeep Kumar
+  - family-names: Datta
+    given-names: Shanmukh
+repository-code: https://github.com/shanmukhdatta/EpoxyTC-ML
+license: MIT
