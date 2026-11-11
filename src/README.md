@@ -1,6 +1,6 @@
-# DEEPOXY — Source code
+# Thermal Conductivity of Particle-Filled Epoxy: Experimental and Machine-Learning Assessment Across Three Regimes — Source code
 
-The scientific Python modules live **directly in `src/`** (there is no nested `deepoxy/` folder). The installed Python distribution is named `deepoxy`, but the import package for this repository layout is **`src`**.
+The scientific Python modules live **directly in `src/`** (there is no nested `deepoxy/` folder). The installed Python distribution is named `epoxy-thermal-conductivity-ml`, but the import package for this repository layout is **`src`**.
 
 ## What each module contains
 
@@ -47,3 +47,5 @@ See [`scripts/`](../scripts/): `run_pipeline.py` audits CSV inputs and EDA; `run
 - [`figures/`](../figures/README.md): seven charts regenerated from recovered CSV values
 - [`docs/evidence/`](../docs/evidence/): provenance manifest, metrics snapshot and reviewer index
 - [`tests/`](../tests/): lightweight synthetic checks, not a claim of full research reproduction
+
+[Public six-column data](../data/processed/README.md) uses source_ref, rather than the full originals' publication_id; the public/nontraining loader and run_pipeline --data-format processed path are separate from historical original-data APIs. Full model reruns demand separately authenticated frozen source groups and indices.

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 500" role="img" aria-label="300 K proxy matrix-property sensitivity">
+<rect width="990" height="500" fill="#ffffff"/>
+<text x="495" y="34" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#18263a">300 K matrix-conductivity sensitivity</text>
+<text x="495" y="57" font-family="Arial" font-size="13" text-anchor="middle" fill="#41526b">Approximate graph points and conditional Maxwell/Bruggeman predictions</text>
+<rect x="78" y="98" width="365" height="272" fill="#fafcff" stroke="#c9d3df"/>
+<text x="261" y="85" font-family="Arial" font-size="15" font-weight="bold" fill="#1f3044" text-anchor="middle">Epoxy–SS304</text>
+<line x1="78" y1="370" x2="443" y2="370" stroke="#e1e7ef"/>
+<text x="68" y="374" font-family="Arial" font-size="11" text-anchor="end" fill="#526173">0.0</text>
+<line x1="78" y1="298.42105263157896" x2="443" y2="298.42105263157896" stroke="#e1e7ef"/>
+<text x="68" y="302.42105263157896" font-family="Arial" font-size="11" text-anchor="end" fill="#526173">0.5</text>
+<line x1="78" y1="226.8421052631579" x2="443" y2="226.8421052631579" stroke="#e1e7ef"/>
+<text x="68" y="230.8421052631579" font-family="Arial" font-size="11" text-anchor="end" fill="#526173">1.0</text>
+<line x1="78" y1="155.26315789473685" x2="443" y2="155.26315789473685" stroke="#e1e7ef"/>
+<text x="68" y="159.26315789473685" font-family="Arial" font-size="11" text-anchor="end" fill="#526173">1.5</text>
+<text x="108.41666666666667" y="390" font-family="Arial" font-size="11" text-anchor="middle" fill="#526173">5%</text>
+<text x="260.5" y="390" font-family="Arial" font-size="11" text-anchor="middle" fill="#526173">10%</text>
+<text x="412.5833333333333" y="390" font-family="Arial" font-size="11" text-anchor="middle" fill="#526173">15%</text>
+<polyline points="108.4,337.1 169.3,335.2 260.5,332.2 321.3,330.2 412.6,326.9" fill="none" stroke="#2873af" stroke-width="3" stroke-dasharray="7 4"/>
+<polyline points="108.4,198.2 169.3,189.9 260.5,177.0 321.3,168.0 412.6,153.8" fill="none" stroke="#288b65" stroke-width="3" />
+<polyline points="108.4,196.8 169.3,187.0 260.5,170.6 321.3,158.3 412.6,137.4" fill="none" stroke="#db7e30" stroke-width="3" stroke-dasharray="5 3"/>
+<circle cx="108.4" cy="200.2" r="5" stroke="#ffffff" stroke-width="1.5" fill="#202e3b"/>
+<circle cx="169.3" cy="188.0" r="5" stroke="#ffffff" stroke-width="1.5" fill="#202e3b"/>
+<circle cx="260.5" cy="180.7" r="5" stroke="#ffffff" stroke-width="1.5" fill="#202e3b"/>
+<circle cx="321.3" cy="167.4" r="5" stroke="#ffffff" stroke-width="1.5" fill="#202e3b"/>
+<circle cx="412.6" cy="158.8" r="5" stroke="#ffffff" stroke-width="1.5" fill="#202e3b"/>
+<text x="261" y="413" font-family="Arial" font-size="12" text-anchor="middle" fill="#2d4359">Filler loading (nominal vol.%)</text>
+<rect x="554" y="98" width="365" height="272" fill="#fafcff" stroke="#c9d3df"/>
+<text x="737" y="85" font-family="Arial" font-size="15" font-weight="bold" fill="#1f3044" text-anchor="middle">Epoxy–Al₂O₃</text>
+<line x1="554" y1="370" x2="919" y2="370" stroke="#e1e7ef"/>
+<text x="544" y="374" font-family="Arial" font-size="11" text-anchor="end" fill="#526173">0.0</text>
+<line x1="554" y1="298.42105263157896" x2="919" y2="298.42105263157896" stroke="#e1e7ef"/>
+<text x="544" y="302.42105263157896" font-family="Arial" font-size="11" text-anchor="end" fill="#526173">0.5</text>
+<line x1="554" y1="226.8421052631579" x2="919" y2="226.8421052631579" stroke="#e1e7ef"/>
+<text x="544" y="230.8421052631579" font-family="Arial" font-size="11" text-anchor="end" fill="#526173">1.0</text>
+<line x1="554" y1="155.26315789473685" x2="919" y2="155.26315789473685" stroke="#e1e7ef"/>
+<text x="544" y="159.26315789473685" font-family="Arial" font-size="11" text-anchor="end" fill="#526173">1.5</text>
+<text x="584.4166666666666" y="390" font-family="Arial" font-size="11" text-anchor="middle" fill="#526173">5%</text>
+<text x="736.5" y="390" font-family="Arial" font-size="11" text-anchor="middle" fill="#526173">10%</text>
+<text x="888.5833333333333" y="390" font-family="Arial" font-size="11" text-anchor="middle" fill="#526173">15%</text>
+<polyline points="584.4,336.9 645.3,335.1 736.5,332.1 797.3,329.9 888.6,326.6" fill="none" stroke="#2873af" stroke-width="3" stroke-dasharray="7 4"/>
+<polyline points="584.4,196.6 645.3,187.6 736.5,173.6 797.3,163.7 888.6,148.2" fill="none" stroke="#288b65" stroke-width="3" />
+<polyline points="584.4,194.8 645.3,183.9 736.5,165.0 797.3,150.5 888.6,125.2" fill="none" stroke="#db7e30" stroke-width="3" stroke-dasharray="5 3"/>
+<circle cx="584.4" cy="197.8" r="5" stroke="#ffffff" stroke-width="1.5" fill="#202e3b"/>
+<circle cx="645.3" cy="186.8" r="5" stroke="#ffffff" stroke-width="1.5" fill="#202e3b"/>
+<circle cx="736.5" cy="177.2" r="5" stroke="#ffffff" stroke-width="1.5" fill="#202e3b"/>
+<circle cx="797.3" cy="158.8" r="5" stroke="#ffffff" stroke-width="1.5" fill="#202e3b"/>
+<circle cx="888.6" cy="152.8" r="5" stroke="#ffffff" stroke-width="1.5" fill="#202e3b"/>
+<text x="737" y="413" font-family="Arial" font-size="12" text-anchor="middle" fill="#2d4359">Filler loading (nominal vol.%)</text>
+<text x="19" y="250" font-family="Arial" font-size="12" text-anchor="middle" transform="rotate(-90 19 250)" fill="#2d4359">Conductivity (W m⁻¹ K⁻¹)</text>
+<line x1="55" y1="444" x2="81" y2="444" stroke="#202e3b" stroke-width="4"/>
+<text x="88" y="448" font-family="Arial" font-size="12" fill="#27384c">Graph-read</text>
+<line x1="290" y1="444" x2="316" y2="444" stroke="#2873af" stroke-width="4"/>
+<text x="323" y="448" font-family="Arial" font-size="12" fill="#27384c">Maxwell, km 0.200</text>
+<line x1="525" y1="444" x2="551" y2="444" stroke="#288b65" stroke-width="4"/>
+<text x="558" y="448" font-family="Arial" font-size="12" fill="#27384c">Maxwell, km 1.064</text>
+<line x1="760" y1="444" x2="786" y2="444" stroke="#db7e30" stroke-width="4"/>
+<text x="793" y="448" font-family="Arial" font-size="12" fill="#27384c">Bruggeman, km 1.064</text>
+<text x="495" y="484" font-family="Arial" font-size="11" text-anchor="middle" fill="#626f7c">Cross-study epoxy inputs and filler proxies are NOT specimen-verified; no experimental uncertainty bars shown.</text>
+</svg>

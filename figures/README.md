@@ -1,6 +1,6 @@
-# DEEPOXY — Results figures
+# Thermal Conductivity of Particle-Filled Epoxy: Experimental and Machine-Learning Assessment Across Three Regimes — Figures
 
-This folder contains **nine SVG figures directly under `figures/`**, seven generated from the recovered notebook results and two from conditional physics comparisons. There is no nested `recovered/` folder.
+This folder contains **ten SVG figures directly under `figures/`**, seven generated from the recovered notebook results and two from conditional physics comparisons. There is no nested `recovered/` folder.
 
 They are **regenerated visualizations of historical reported values**, **not the original 145 embedded PNG images**, and were created without training or rerunning ML models.
 
@@ -35,3 +35,11 @@ See [`results/README.md`](../results/README.md) for completed computations, rema
 | [`physics_lab_figure3_300k.svg`](physics_lab_figure3_300k.svg) | Approximate manuscript Figure 3 markers and proxy-property model predictions | [Digitized readings](../results/lab_figure3_digitized_approx.csv) |
 
 Neither plot establishes experimental validation for all 256 original readings. Graph-read uncertainty is not an instrument calibration uncertainty.
+
+## Updated paper-aligned sensitivity graph
+
+| Figure | Underlying table |
+|---|---|
+| [physics_matrix_sensitivity_300k.svg](physics_matrix_sensitivity_300k.svg) | [Ten manuscript 300 K scenarios](../results/manuscript_physics_300k_matrix_sensitivity.csv) |
+
+The earlier [physics_lab_figure3_300k.svg](physics_lab_figure3_300k.svg) remains for provenance but depicts **only an earlier low-conductivity proxy** and is superseded for the revised manuscript's balanced interpretation. No source figure is an instrument uncertainty calculation. Read the [scientific limitations](../docs/reproducibility.md).

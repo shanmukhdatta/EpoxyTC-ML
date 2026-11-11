@@ -73,3 +73,30 @@ def provenance_table(frame, source_column="publication_id", evidence_columns=())
                                              if col in part else 0)
         rows.append(record)
     return pd.DataFrame(rows)
+
+# Public six-column tables are intentionally separate from full original-file APIs.
+PUBLIC_REGIME_FILENAMES = {
+    "cryogenic": "CRYOGENIC.csv",
+    "room": "ROOM.csv",
+    "high": "HIGH.csv",
+}
+PUBLIC_COLUMNS = [
+    "base_tc_w_mk", "filler_tc_w_mk", "filler_loading_as_recorded",
+    "temperature_k_recorded", "composite_tc_w_mk", "source_ref",
+]
+
+
+def load_public_datasets(directory):
+    """Read and inspect existing minimal files without inferring source authenticity."""
+    root = Path(directory)
+    paths = {k: root / v for k, v in PUBLIC_REGIME_FILENAMES.items()}
+    missing = [str(p) for p in paths.values() if not p.is_file()]
+    if missing:
+        raise FileNotFoundError("Missing public six-column datasets: " + ", ".join(missing))
+    out = load_regimes(paths, required_columns=PUBLIC_COLUMNS)
+    for regime, (frame, _) in out.items():
+        if list(frame.columns) != PUBLIC_COLUMNS:
+            raise ValueError(f"{regime}: expected only six public data columns")
+        if regime == "room" and frame["temperature_k_recorded"].notna().any():
+            raise ValueError("Room records have no measured per-row temperatures")
+    return out

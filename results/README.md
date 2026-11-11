@@ -1,6 +1,6 @@
-# DEEPOXY — Flat results directory
+# Thermal Conductivity of Particle-Filled Epoxy: Experimental and Machine-Learning Assessment Across Three Regimes — Results
 
-**One directory, CSV files only (plus this README).** The former `results/physics/` and `results/verification/` subdirectories have been removed; their useful CSV evidence is directly here. The original 15 notebook CSVs are preserved byte-for-byte. **Total: 28 CSV tables**.
+**One directory, CSV files only (plus this README).** The former `results/physics/` and `results/verification/` subdirectories have been removed; their useful CSV evidence is directly here. The original 15 notebook CSVs are preserved byte-for-byte. **Total: 29 CSV tables**.
 
 ## A. Original Kaggle notebook results — 15 CSV files
 
@@ -24,7 +24,7 @@ These are historical saved notebook output tables; they were not retrained durin
 | [`seven_model_pairwise_tests.csv`](seven_model_pairwise_tests.csv) | Exploratory paired statistical tests |
 | [`source_verification_status.csv`](source_verification_status.csv) | Original source-count and provenance gaps |
 
-## B. Physical equations and experimental comparisons — 9 CSV files
+## B. Physical equations and experimental comparisons — 10 CSV files
 
 These are limited, **conditional** model comparisons using reported experiments, approximate graph readings and/or literature-supported constituent properties. Maxwell–Eucken, Bruggeman, Hamilton–Crosser, Lewis–Nielsen and Hashin–Shtrikman are implemented in [`src/physics.py`](../src/physics.py).
 
@@ -76,3 +76,13 @@ Related context is in [`docs/evidence/`](../docs/evidence/), including [conditio
 - Original row source assignments and filler-loading units need independent authentication.
 - The notebook's stated 259 observations versus the available 256 original CSV rows remain unresolved.
 - No new model training, original-row replacement or data correction was performed by this directory reorganization.
+
+## D. Revised manuscript's 300 K matrix-property sensitivity — one additional CSV
+
+| CSV | Interpretation |
+|---|---|
+| [manuscript_physics_300k_matrix_sensitivity.csv](manuscript_physics_300k_matrix_sensitivity.csv) | 10 approximate graph-read SS304/Al2O3 cases from revised manuscript; Maxwell and Bruggeman with 0.200 vs cross-study 1.064 W/(m·K) matrix assumptions; NOT independently validated lab accuracy |
+
+[Updated two-panel figure](../figures/physics_matrix_sensitivity_300k.svg). Numerically rechecked against src/physics.py. The 1.064 W/(m·K) epoxy is from a **different published material batch** (Kumar et al., [Cryogenics 2024](https://doi.org/10.1016/j.cryogenics.2024.103973)); bulk SS304 proxy is 15.3087 W/(m·K) and an external alumina proxy is 24.5 W/(m·K). The reported illustrative MAPE changes from ~80.46% (lower-matrix Maxwell) to ~1.43% (cross-study-matrix Maxwell); corresponding Bruggeman ~4.89%. **This is sensitivity, not specimen-specific predictive accuracy**. Earlier original table rows and graph-digitization CSVs were preserved. [Reproduction guidance](../docs/reproducibility.md).
+
+The three [public six-column data files](../data/processed/README.md) are tracked in data/processed; the full historical originals remain off-repository.
