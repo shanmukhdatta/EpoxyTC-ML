@@ -1,11 +1,19 @@
-# Public research data
+# Dataset index
 
-The only tracked dataset folder is [processed/](processed/README.md), containing the three verified **six-column** CSVs (54 cryogenic + 160 nominal-room + 42 high = 256 original records). They are cleaned *copies*; the 24-column originals have not been altered.
+The only committed datasets are the **three six-column exports** in [processed/](processed/README.md). The original full historical 24-column research inputs are **not** in this public repository; these exports are not substitutes for original specimen/source documentation.
 
-| Regime | CSV | Rows | Actual temperatures | Source groups |
-|---|---|---:|---|---:|
-| Cryogenic | [CRYOGENIC.csv](processed/CRYOGENIC.csv) | 54 | 2–120 K recorded | 5 provisional |
-| Nominal room | [ROOM.csv](processed/ROOM.csv) | 160 | Not recorded per row | 5 provisional |
-| High | [HIGH.csv](processed/HIGH.csv) | 42 | 308–423 K recorded | 1 provisional |
+| Regime | Direct download | Original rows | Recorded temperature | Provisional source groups |
+| --- | --- | ---: | --- | ---: |
+| Cryogenic | [CRYOGENIC.csv](processed/CRYOGENIC.csv) | 54 | 2–120 K | 5 |
+| Nominal room | [ROOM.csv](processed/ROOM.csv) | 160 | Missing in all rows | 5 |
+| High | [HIGH.csv](processed/HIGH.csv) | 42 | 308–423 K | 1 |
 
-See [schema, hashes, and missing-evidence caveats](processed/README.md); [source verification](../results/source_authentication_gate_256.csv); and [reproducibility](../docs/reproducibility.md). Original full inputs are not published here, and no source-ref number alone proves authenticated specimen identity.
+**Total: 256 rows.** The exports have four candidate input fields, one target, and `source_ref` (non-feature, provisional provenance); see the [column dictionary and three SHA-256 checksums](processed/README.md).
+
+From repository root, check the exact public files with:
+
+```bash
+python scripts/verify_public_datasets.py
+```
+
+The original-file hashes and reported missing evidence are saved in [dataset verification](../docs/evidence/dataset_verification_summary.json), with the original-input checksum table in [results/input_file_hashes.csv](../results/input_file_hashes.csv). These are **previous audit records**, not a claim of freshly regenerated original-file evidence. Row-level source identity and filler-loading units are not independently authenticated. One source for the high-temperature records precludes a publication-held-out evaluation in that regime. [Full reproducibility guide](../docs/reproducibility.md).

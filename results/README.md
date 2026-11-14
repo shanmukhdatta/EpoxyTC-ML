@@ -1,88 +1,74 @@
-# Thermal Conductivity of Particle-Filled Epoxy: Experimental and Machine-Learning Assessment Across Three Regimes — Results
+# Results archive: exact file index and interpretation
 
-**One directory, CSV files only (plus this README).** The former `results/physics/` and `results/verification/` subdirectories have been removed; their useful CSV evidence is directly here. The original 15 notebook CSVs are preserved byte-for-byte. **Total: 29 CSV tables**.
+This directory contains **26 currently tracked CSV tables**, all directly inside `results/` (no nested result folders). Saved historical model results have **not been retrained** by reorganizing or documenting this archive. Figures are indexed in [figures/](../figures/README.md).
 
-## A. Original Kaggle notebook results — 15 CSV files
+## A. Historical saved machine-learning summaries (14 CSVs)
 
-These are historical saved notebook output tables; they were not retrained during this cleanup. Publication/material identity is still provisional.
+These are inspectable **archived notebook summaries**, not a release of per-row predictions, the original frozen split assignments, full Optuna trial histories, or pretrained checkpoints.
 
-| CSV file | Description |
-|---|---|
-| [`augmentation_ablation_summary.csv`](augmentation_ablation_summary.csv) | Saved exploratory augmentation comparisons |
-| [`external_uncertainty_availability.csv`](external_uncertainty_availability.csv) | Availability of retrospective uncertainty exports; not raw laboratory data |
-| [`feature_importance_summary.csv`](feature_importance_summary.csv) | Saved permutation feature importance |
-| [`high_temperature_exploratory_models.csv`](high_temperature_exploratory_models.csv) | Within-single-publication high-temperature model metrics |
-| [`nine_model_cv_summary.csv`](nine_model_cv_summary.csv) | Nine-model grouped-development summaries (18 rows) |
-| [`nine_model_oof_bias_summary.csv`](nine_model_oof_bias_summary.csv) | Pooled OOF/bias summaries, not row-level predictions |
-| [`nine_model_paired_comparisons.csv`](nine_model_paired_comparisons.csv) | Four exploratory matched-fold comparisons |
-| [`ood_summary.csv`](ood_summary.csv) | Feature-range OOD diagnostics |
-| [`optuna_model_summary.csv`](optuna_model_summary.csv) | Tuning summaries, not full trial logs |
-| [`original_five_model_cv_summary.csv`](original_five_model_cv_summary.csv) | Original five-model benchmark |
-| [`phase7_reference_model_summary.csv`](phase7_reference_model_summary.csv) | Later reference-model summary |
-| [`reviewer_status_counts.csv`](reviewer_status_counts.csv) | Historical reviewer-progress counts |
-| [`seven_model_cv_summary.csv`](seven_model_cv_summary.csv) | Seven-model benchmark |
-| [`seven_model_pairwise_tests.csv`](seven_model_pairwise_tests.csv) | Exploratory paired statistical tests |
-| [`source_verification_status.csv`](source_verification_status.csv) | Original source-count and provenance gaps |
+| CSV | Interpretation |
+| --- | --- |
+| [augmentation_ablation_summary.csv](augmentation_ablation_summary.csv) | Saved exploratory augmentation/control comparisons |
+| [external_uncertainty_availability.csv](external_uncertainty_availability.csv) | Availability of historical uncertainty exports; not raw instrument uncertainties |
+| [feature_importance_summary.csv](feature_importance_summary.csv) | Reported feature-importance diagnostics |
+| [high_temperature_exploratory_models.csv](high_temperature_exploratory_models.csv) | Exploratory models in a single-source high-temperature regime |
+| [nine_model_cv_summary.csv](nine_model_cv_summary.csv) | Nine-model, four-provisional-development-fold summaries for cryogenic and room data |
+| [nine_model_oof_bias_summary.csv](nine_model_oof_bias_summary.csv) | Pooled out-of-fold errors and bias summaries, not row-level predictions |
+| [nine_model_paired_comparisons.csv](nine_model_paired_comparisons.csv) | Four paired model comparisons with adjusted p-values |
+| [ood_summary.csv](ood_summary.csv) | Recorded outside-training-range diagnostics |
+| [optuna_model_summary.csv](optuna_model_summary.csv) | Tuning result summaries, not all trial records |
+| [original_five_model_cv_summary.csv](original_five_model_cv_summary.csv) | Original five-model comparison |
+| [phase7_reference_model_summary.csv](phase7_reference_model_summary.csv) | Later reference-model summary |
+| [reviewer_status_counts.csv](reviewer_status_counts.csv) | Historical reviewer-evidence status counts |
+| [seven_model_cv_summary.csv](seven_model_cv_summary.csv) | Seven-model comparison |
+| [seven_model_pairwise_tests.csv](seven_model_pairwise_tests.csv) | Saved exploratory paired tests |
 
-## B. Physical equations and experimental comparisons — 10 CSV files
+**Interpretation:** The lowest saved mean-fold MAEs in the nine-model table are 0.06264 W/(m·K) (cryogenic) and 0.18339 W/(m·K) (room) for TabICLv2. Four recorded comparisons have Holm-adjusted `p = 0.50`: descriptive rankings are **not demonstrations of significant superiority**. The high-temperature table comes from one provisional publication; no publication-held-out generalization is established.
 
-These are limited, **conditional** model comparisons using reported experiments, approximate graph readings and/or literature-supported constituent properties. Maxwell–Eucken, Bruggeman, Hamilton–Crosser, Lewis–Nielsen and Hashin–Shtrikman are implemented in [`src/physics.py`](../src/physics.py).
+## B. Conditional physical-model and manuscript-number analyses (10 CSVs)
 
-| CSV file | Description |
-|---|---|
-| [`source_experiment_model_comparisons.csv`](source_experiment_model_comparisons.csv) | 11 conditional source-reconstructed physical-model cases |
-| [`lab_figure3_digitized_approx.csv`](lab_figure3_digitized_approx.csv) | 30 approximate manuscript Figure 3 plot readings |
-| [`lab_fig3_forward_model_scenarios.csv`](lab_fig3_forward_model_scenarios.csv) | 15 literature-proxy forward-model scenarios |
-| [`lab_fig3_maxwell_inverse_checks.csv`](lab_fig3_maxwell_inverse_checks.csv) | 30 inverse/high-filler-conductivity Maxwell checks |
-| [`lab_fig3_geometry_sensitivity.csv`](lab_fig3_geometry_sensitivity.csv) | Geometry and packing sensitivity scenarios |
-| [`lab_fig3_group_plausibility.csv`](lab_fig3_group_plausibility.csv) | Six filler × temperature plausibility summaries |
-| [`manuscript_tables_2_4_6_recalculated_errors.csv`](manuscript_tables_2_4_6_recalculated_errors.csv) | 16 manuscript numerical error comparisons; some references provisional |
-| [`physical_property_source_register.csv`](physical_property_source_register.csv) | Literature property inputs, sources and temperature limits |
-| [`physics_reviewer_comment_coverage.csv`](physics_reviewer_comment_coverage.csv) | 17 physics-related reviewer question statuses |
+| CSV | Interpretation |
+| --- | --- |
+| [source_experiment_model_comparisons.csv](source_experiment_model_comparisons.csv) | 11 conditional source-reconstructed cases |
+| [lab_figure3_digitized_approx.csv](lab_figure3_digitized_approx.csv) | 30 approximately digitized manuscript plot readings |
+| [lab_fig3_forward_model_scenarios.csv](lab_fig3_forward_model_scenarios.csv) | 15 proxy-property forward-model scenarios |
+| [lab_fig3_maxwell_inverse_checks.csv](lab_fig3_maxwell_inverse_checks.csv) | Inverse Maxwell checks for the graph readings |
+| [lab_fig3_geometry_sensitivity.csv](lab_fig3_geometry_sensitivity.csv) | Filler geometry/packing sensitivity |
+| [lab_fig3_group_plausibility.csv](lab_fig3_group_plausibility.csv) | Filler/temperature-group plausibility checks |
+| [manuscript_tables_2_4_6_recalculated_errors.csv](manuscript_tables_2_4_6_recalculated_errors.csv) | 16 saved manuscript-table error comparisons |
+| [physical_property_source_register.csv](physical_property_source_register.csv) | Literature-supported constituent-property register |
+| [physics_reviewer_comment_coverage.csv](physics_reviewer_comment_coverage.csv) | Physics-related reviewer evidence status |
+| [manuscript_physics_300k_matrix_sensitivity.csv](manuscript_physics_300k_matrix_sensitivity.csv) | Ten revised 300 K cases under two matrix-property assumptions |
 
-Recorded computation scope: **11** source-reconstructed comparison cases, **30** approximately digitized manuscript Figure 3 observations, **15** forward-model scenarios, and **16** manuscript-table error comparisons. The 158 arithmetic replay checks confirm computational consistency, **not** exact-specimen experimental validity.
+The computations can be replayed **arithmetically** with `src/physics.py`. Approximate graph reading, external epoxy/filler property values, filler volume/shape assumptions, and sample identity are **not independent laboratory verification**. In particular, the 1.064 W/(m·K) epoxy assumption in the revised sensitivity table comes from a **different published material batch** ([Cryogenics 2024](https://doi.org/10.1016/j.cryogenics.2024.103973)); favorable conditional model error under that assumption is not verified specimen-specific predictive accuracy.
 
-Plots are kept in the existing [`figures/`](../figures/README.md): [REF_23 physics comparison](../figures/physics_ref23_models.svg), [digitized lab Figure 3](../figures/physics_lab_figure3_300k.svg).
+See [physics comparison figure](../figures/physics_ref23_models.svg), [approximate Figure 3 reconstruction](../figures/physics_lab_figure3_300k.svg), and [updated matrix sensitivity plot](../figures/physics_matrix_sensitivity_300k.svg).
 
-## C. Dataset source integrity — 4 CSV files
+## C. Saved input-integrity evidence (2 CSVs)
 
-| CSV file | Description |
-|---|---|
-| [`source_authentication_gate_256.csv`](source_authentication_gate_256.csv) | All 256 original observations and their source-evidence gate |
-| [`regime_validation_gates.csv`](regime_validation_gates.csv) | Three-regime counts, publication-group split feasibility |
-| [`same_input_different_target_rows.csv`](same_input_different_target_rows.csv) | Six room observations with identical recorded inputs but different targets |
-| [`input_file_hashes.csv`](input_file_hashes.csv) | SHA256 digests of the unmodified original raw datasets |
+| CSV | Interpretation |
+| --- | --- |
+| [input_file_hashes.csv](input_file_hashes.csv) | Previously recorded hashes/counts of the **full original** CSV files |
+| [same_input_different_target_rows.csv](same_input_different_target_rows.csv) | Six room records from three equal-input/different-target pairs |
 
-The cryogenic, room and high datasets comprise **54, 160 and 42 rows** (256 total), associated with 5, 5 and 1 **provisional** source groups. **0/256 rows** have fully authenticated original specimen and loading-unit evidence. Therefore no universal physical verification or publication-held-out validation of the single-source high-temperature set can be claimed.
+The 256-row source authentication and regime validation tables named in **older documentation are not present in the current repository**. Do not follow or cite dead links to `source_authentication_gate_256.csv`, `regime_validation_gates.csv`, or `source_verification_status.csv`. The recorded earlier verification summary survives as [dataset_verification_summary.json](../docs/evidence/dataset_verification_summary.json), but that JSON is **not equivalent to those missing row-level CSVs**.
 
-Three pairs (six rows) in the room dataset have identical recorded four-feature input vectors but differing target conductivity values. Their implied full-recorded-data deterministic-fit error floor is **MAE 0.0081875** and **RMSE 0.0528471 W/(m·K)**. These are mathematical lower bounds, **not held-out model scores**.
+The three room collision pairs imply a theoretical **full-dataset deterministic-fit** error floor of MAE 0.0081875 and RMSE 0.0528471 W/(m·K), for regressors restricted to exactly four recorded features. These are not held-out scores; read the [collision audit](../docs/evidence/room_feature_collision_finding.md).
 
-## Reproduce the checks
+## Verify without changing results
+
+Run from repository root:
 
 ```bash
 python -m pytest -q
+python scripts/verify_public_datasets.py
 python scripts/verify_physics_results.py
-python scripts/verify_data_integrity.py --data-dir /path/to/original/CSVs --output-dir /path/to/new/audit
 ```
 
-The original input CSVs are not committed. The second script requires them; use an output directory **outside `results/`** to preserve these curated tables. The physics script replays the saved results using the actual `src/physics.py` equations.
+These checks use present public assets. For a **fresh** original 24-column data/provenance audit, separately provide the original three CSVs and run:
 
-Related context is in [`docs/evidence/`](../docs/evidence/), including [conditional paper-ready physics text](../docs/evidence/physics_paper_ready.md), [collision details](../docs/evidence/room_feature_collision_finding.md), [blank raw-lab input template](../docs/evidence/lab_measurement_input_template.csv) and the [40-question reviewer index](../docs/evidence/reviewer_evidence_index.csv).
+```bash
+python scripts/verify_data_integrity.py --data-dir /path/to/full-originals --output-dir build/original-audit
+```
 
-## Scientific limitations
-
-- Graph digitization tolerance is **not** experimental uncertainty or a GUM calibration budget.
-- External epoxy/filler conductivity, density, shape and packing assumptions are **not automatically valid for the exact specimens**.
-- Original row source assignments and filler-loading units need independent authentication.
-- The notebook's stated 259 observations versus the available 256 original CSV rows remain unresolved.
-- No new model training, original-row replacement or data correction was performed by this directory reorganization.
-
-## D. Revised manuscript's 300 K matrix-property sensitivity — one additional CSV
-
-| CSV | Interpretation |
-|---|---|
-| [manuscript_physics_300k_matrix_sensitivity.csv](manuscript_physics_300k_matrix_sensitivity.csv) | 10 approximate graph-read SS304/Al2O3 cases from revised manuscript; Maxwell and Bruggeman with 0.200 vs cross-study 1.064 W/(m·K) matrix assumptions; NOT independently validated lab accuracy |
-
-[Updated two-panel figure](../figures/physics_matrix_sensitivity_300k.svg). Numerically rechecked against src/physics.py. The 1.064 W/(m·K) epoxy is from a **different published material batch** (Kumar et al., [Cryogenics 2024](https://doi.org/10.1016/j.cryogenics.2024.103973)); bulk SS304 proxy is 15.3087 W/(m·K) and an external alumina proxy is 24.5 W/(m·K). The reported illustrative MAPE changes from ~80.46% (lower-matrix Maxwell) to ~1.43% (cross-study-matrix Maxwell); corresponding Bruggeman ~4.89%. **This is sensitivity, not specimen-specific predictive accuracy**. Earlier original table rows and graph-digitization CSVs were preserved. [Reproduction guidance](../docs/reproducibility.md).
-
-The three [public six-column data files](../data/processed/README.md) are tracked in data/processed; the full historical originals remain off-repository.
+This last command **cannot** be performed with the public six-column exports. Use `build/` or another new output folder rather than overwriting archived results. [Full reproducibility protocol](../docs/reproducibility.md) · [Reviewer evidence index](../docs/evidence/reviewer_evidence_index.csv) · [Dataset index](../data/README.md).

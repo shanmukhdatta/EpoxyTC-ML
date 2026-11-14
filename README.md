@@ -1,45 +1,84 @@
 # Thermal Conductivity of Particle-Filled Epoxy: Experimental and Machine-Learning Assessment Across Three Regimes
 
-[![Research integrity checks](https://github.com/shanmukhdatta/EpoxyTC-ML/actions/workflows/tests.yml/badge.svg)](https://github.com/shanmukhdatta/EpoxyTC-ML/actions/workflows/tests.yml) · [MIT license](LICENSE)
+[![Research integrity checks](https://github.com/shanmukhdatta/EpoxyTC-ML/actions/workflows/tests.yml/badge.svg)](https://github.com/shanmukhdatta/EpoxyTC-ML/actions/workflows/tests.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-**Research-code and evidence repository** for the submitted Elsevier *Measurement* manuscript, **MEAS-D-26-20648**. The revised manuscript has not been confirmed publicly published; therefore **no article DOI or publisher page is asserted here**. Add the official paper link only after release. Cite this repository by an exact commit in the meantime ([CITATION.cff](CITATION.cff)).
+**Code, curated data, numerical checks, figures, and research evidence accompanying a manuscript submitted to Elsevier's *Measurement* (manuscript ID: MEAS-D-26-20648).** This is a research artifact, **not a claim of independently replicated experiments or complete retraining of every historical model**.
 
-Related **published, separate experiments** (not interchangeable with the present SS304/Al2O3 specimens): [Cryogenics (2024)](https://doi.org/10.1016/j.cryogenics.2024.103973), [Fusion Engineering and Design (2024)](https://doi.org/10.1016/j.fusengdes.2024.114529), and [Vacuum (2026)](https://doi.org/10.1016/j.vacuum.2025.114900).
+**Manuscript authors (as recorded in [CITATION.cff](CITATION.cff)):** Manas Kumar, Lalit Bansal, Govinda Rao Yenni, Ravi Verma, Pradeep Kumar Awasthi, and Shanmukh Datta.  
+**Maintained at:** [github.com/shanmukhdatta/EpoxyTC-ML](https://github.com/shanmukhdatta/EpoxyTC-ML)  
+**Publication status:** submitted / under revision; no accepted-paper link or article DOI is asserted. Update this field only when the publisher confirms publication.
 
-## Start here
+## Repository contents
 
-| Folder | Navigation |
-|---|---|
-| [data/](data/README.md) | Three public six-column CSVs: cryogenic 54, room 160, high 42 (256 original rows) |
-| [results/](results/README.md) | Flat, fully indexed historical ML output, statistics, provenance gates, and physics cases |
-| [figures/](figures/README.md) | Vector charts linked to their data; updated matrix-property sensitivity chart |
-| [src/](src/README.md) | Scientific code modules and applicability boundaries |
-| [scripts/](scripts/README.md) | Data and numerical audits, EDA runner, opt-in training |
-| [configs/](configs/README.md) | Dataset/configuration files |
-| [tests/](tests/README.md) | Synthetic and saved-evidence regression tests |
-| [docs/](docs/README.md) | [Reproducibility guide](docs/reproducibility.md) and [reviewer evidence](docs/evidence/README.md) |
-| [.github/workflows/](.github/workflows/README.md) | CI on Python 3.11/3.12 |
+| Location | What a reader will find |
+| --- | --- |
+| [data/processed/](data/processed/README.md) | Three downloadable public six-column CSVs; schema, record counts, and SHA-256 hashes |
+| [results/](results/README.md) | **26 tracked CSV tables**: saved ML comparisons, conditional physics analyses, and data audits |
+| [figures/](figures/README.md) | **10 SVG plots**, with links to their underlying results and interpretation cautions |
+| [src/](src/README.md) | Python modules for data handling, EDA, model construction, grouped training, augmentation, evaluation, physics, and diagnostics |
+| [scripts/](scripts/README.md) | Commands for read-only dataset checks, physics replay, EDA, and explicitly requested model runs |
+| [configs/](configs/README.md) | Dataset definitions, historical experiment settings, and model parameter references |
+| [tests/](tests/README.md) | Automated software, data-integrity, and saved-numerical-evidence checks |
+| [docs/reproducibility.md](docs/reproducibility.md) | **Step-by-step reproduction protocol**, supported claims, and unavailable dependencies |
+| [docs/evidence/](docs/evidence/README.md) | Evidence snapshot, original-input hashes, reviewer index, and outstanding provenance limitations |
+| [.github/workflows/](.github/workflows/README.md) | GitHub Actions checks on Python 3.11 and 3.12 |
 
-## Minimal public dataset
+## Public datasets
 
-The four **candidate input features** are base_tc_w_mk, filler_tc_w_mk, filler_loading_as_recorded and temperature_k_recorded. composite_tc_w_mk is the target. source_ref is **provenance/splitting metadata, never a model input**. Actual row-level temperature is unavailable for **all 160 nominal-room** records. The source-ref labels are **provisional historical bibliography numbers**, not verified row-level material provenance or guaranteed to match manuscript citation numbering. The high-temperature subset comes from one provisional source and cannot support publication-held-out validation. Source-specific filler-loading units have not all been authenticated.
+The repository contains **256 recorded rows** across three regimes. Download each CSV directly from GitHub or clone the whole repository.
 
-The already-committed [six-column files](data/processed/README.md) are **byte-for-byte identical** to the cleaned CSVs from the original 54/160/42-row files. Original full research files, specimen records and notebooks are preserved **outside** this publication repository; they are not silently generated from the six-column copies.
+| Regime | Dataset | Rows | Recorded per-row temperature | Provisional source groups |
+| --- | --- | ---: | --- | ---: |
+| Cryogenic | [CRYOGENIC.csv](data/processed/CRYOGENIC.csv) | 54 | 2–120 K | 5 |
+| Nominal room temperature | [ROOM.csv](data/processed/ROOM.csv) | 160 | **Missing for all 160 records** | 5 |
+| Elevated temperature | [HIGH.csv](data/processed/HIGH.csv) | 42 | 308–423 K | 1 |
+| **Total** | | **256** | | |
 
-## Quick checks
+The four *candidate* input fields are `base_tc_w_mk`, `filler_tc_w_mk`, `filler_loading_as_recorded`, and `temperature_k_recorded`. The target is `composite_tc_w_mk`. The sixth column, `source_ref`, is **provisional provenance metadata and must not be used as a prediction feature**. Filler-loading units are not authenticated uniformly, and the source-reference labels are not verified observation-to-paper assignments. Do **not** silently replace the room-temperature missing values with measured temperatures.
 
-~~~bash
+The **original full historical 24-column CSVs, exact frozen training splits, raw laboratory measurements, original notebooks, and pretrained model checkpoints are not bundled**. These public six-column extracts support inspection and certain audits, not an exact reconstruction of the historical training runs. Details: [data dictionary and file checksums](data/processed/README.md) and [scientific limitations](docs/reproducibility.md).
+
+## Quick start: reproducible checks without model retraining
+
+Run from the repository root with **Python 3.10 or newer**:
+
+```bash
+git clone https://github.com/shanmukhdatta/EpoxyTC-ML.git
+cd EpoxyTC-ML
 python -m pip install -e ".[test]"
+python -m compileall -q src scripts tests
 python -m pytest -q
 python scripts/verify_public_datasets.py
 python scripts/verify_physics_results.py
 python scripts/run_pipeline.py --data-dir data/processed --data-format processed --output-dir build/eda-audit
-~~~
+```
 
-The checks do not train models or download external pretrained checkpoints. Results generated by exploratory commands should go to the ignored **build/** folder; committed results/ is a curated archive. See [full reproducibility requirements](docs/reproducibility.md).
+These commands check the tracked CSV schema/counts/hashes, run regression tests, replay conditional physical-model calculations, and generate **new descriptive EDA outputs in `build/eda-audit/`**. They do not retrain TabFM, TabICLv2, or the other historical ML models, and they do not download checkpoints. `build/` is ignored; do not overwrite the curated `results/` archive.
 
-## What this repository does *not* establish
+For advanced workflows (full-original data audits, independently supplied row-level predictions, or new grouped CV with authentic splits), use the documented commands in [Reproducibility](docs/reproducibility.md). Optional model dependencies are listed in [pyproject.toml](pyproject.toml).
 
-The saved ML benchmarks are documented historical outputs; full frozen-split, model, trial-log and checkpoint parity is **not independently reproducible from six-column files alone**. Labels for five cryogenic sources, five room sources, and the one high-temperature source have not been row-level authenticated. Conditional Maxwell/Bruggeman/etc. calculations, graph digitizations and sensitivity studies are **not** new experimental uncertainty measurements or independent specimen validation. Do not assume performance on unseen material systems.
+## Where to check the reported results
 
-This code is under [MIT](LICENSE); third-party source article PDFs and proprietary laboratory data are not automatically licensed for redistribution.
+- **Nine-model development comparison:** [saved MAE/RMSE/R² table](results/nine_model_cv_summary.csv), [four paired tests](results/nine_model_paired_comparisons.csv), and [cryogenic](figures/cryogenic_nine_model_mean_fold_mae.svg) / [room](figures/room_nine_model_mean_fold_mae.svg) charts. TabICLv2's smallest *recorded* mean-fold MAEs are 0.06264 and 0.18339 W/(m·K), respectively. These are historical descriptive rankings, **not statistically established superiority** (all four recorded Holm-adjusted `p = 0.50`).
+- **High-temperature comparison:** [exploratory metrics](results/high_temperature_exploratory_models.csv). All 42 observations originate from **one provisional publication**, so no independent publication holdout exists.
+- **Augmentation and reliability:** [ablation](results/augmentation_ablation_summary.csv), [out-of-range diagnostics](results/ood_summary.csv), [feature importance](results/feature_importance_summary.csv), and the [full result index](results/README.md).
+- **Physics and manuscript checks:** [source comparison](results/source_experiment_model_comparisons.csv), [300 K matrix sensitivity](results/manuscript_physics_300k_matrix_sensitivity.csv), [corresponding plot](figures/physics_matrix_sensitivity_300k.svg), and the [read-only numerical replay](scripts/verify_physics_results.py). Approximate digitization and external constituent-property proxies are **not new laboratory measurements or independently validated specimen predictions**.
+- **Data-evidence gaps:** [saved original-input audit](docs/evidence/dataset_verification_summary.json), [room feature collisions](docs/evidence/room_feature_collision_finding.md), and [40-item reviewer evidence index](docs/evidence/reviewer_evidence_index.csv).
+
+## Reproducibility status and boundaries
+
+| Evidence type | What this repository supports |
+| --- | --- |
+| Public six-column dataset integrity | **Directly checkable** using recorded SHA-256, schema, and row counts |
+| Python module and script smoke tests | **Directly checkable** using `pytest` and CI |
+| Public-data EDA | **Rerunnable** using committed CSVs |
+| Saved conditional effective-medium arithmetic | **Numerically replayable**; source material assumptions remain conditional |
+| Historical ML tables and model rankings | **Inspectable archived outputs**; exact train/split/checkpoint parity not established |
+| Source-to-row authentication, original laboratory uncertainty, independent external validity | **Not established** by the repository |
+
+No article DOI is currently available. To cite the software/data artifact, use [CITATION.cff](CITATION.cff) and record the **exact Git commit SHA** used for the analysis (`git rev-parse HEAD` after cloning). A future tagged archival release and DOI, if created, should supplement—not silently replace—the versioned commit reference.
+
+## License and responsible use
+
+Code is provided under the [MIT License](LICENSE). Redistribution rights to third-party source publications, laboratory records, and original external measurements are **not conferred** by the code license. Follow the limits in [docs/reproducibility.md](docs/reproducibility.md) when citing or extending these results.
